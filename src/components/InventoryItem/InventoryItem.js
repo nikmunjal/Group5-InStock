@@ -14,7 +14,7 @@ function InventoryItem(props)
             <li className='inventory__detail'>{props.status}</li>
             <li className='inventory__detail'>{props.qty}</li>
             <li className='inventory__detail'>{props.warehouse}</li>
-            <li className='inventory__detail'><img  className= "invetory__logo" alt = "delete icon" src = {delete__icon} /> <img  className= "invetory__logo" alt =  "edit icon" src = {edit__icon} /></li>
+            <li className='inventory__detail'><img  className= "inventory__logo" alt = "delete icon" src = {delete__icon} /> <img  className= "inventory__logo" alt =  "edit icon" src = {edit__icon} /></li>
           </ul>
       </>
   )

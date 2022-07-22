@@ -1,43 +1,53 @@
-import { API_URL_Warehouse } from '../../utilities/utility';
+import { API_URL_warehouse } from '../../utilities/utility';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import WarehouseItem from '../../components/WarehouseItem/WarehouseItem';
 
 function WarehousePage() {
-    const [Warehouse,setWarehouse] = useState({items:[]});
+    const [warehouse,setwarehouse] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
-          const response = await axios(
-            {API_URL_Warehouse},
-          );
+         try {
+            const response = await axios.get('http://localhost:8080/warehouse');
+            setwarehouse(response.data);
+        } catch (error) {
+          console.error(error)
+        }
+        setLoading(false);
+      };
 
-          setWarehouse(response.data);
-        };
+      fetchData();
+    }, []);
 
-        fetchData();
-      }, []);
+    if (loading) {
+        return <div className="Loading">Loading warehouse list...</div>;
+      }
+
+
 
       return(
-        <ul>
-      {Warehouse.items.map(item => (
-        <li key={item.objectID}>
-          <a href={item.url}>{item.title}</a>
-        </li>
-      ))}
-    </ul>
-    //     <>
 
-    //    <section className = 'Warehouse List'>
+        <>
+        <h2>Warehouse List</h2>
 
-    //    {props.comments.map(comment =>
-    //         <CommentCard key={comment.name}
-    //         name = {comment.name}
-    //         timestamp = {comment.timestamp}
-    //         comment = {comment.comment}
-    //         />
-    //        )}
-    //    </section>
-    //     </>
+      {warehouse.map(w =>
+      <WarehouseItem key={w.id}
+      name = {w.name}
+      address = {w.address}
+      contactName = {w.contact.name}
+      contactPhone = {w.contact.phone}
+      contactEmail = {w.contact.email}
+
+      />
+     )}
+
+
+        </>
+
+
+
     )
 }
 

@@ -1,7 +1,7 @@
 import { API_URL_Inventory } from '../../utilities/utility';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import InventoryItem from '../../components/InventoryList/InventoryItem';
+import InventoryItem from '../../components/InventoryItem/InventoryItem';
 
 function InventoryPage() {
     const [inventory,setinventory] = useState([]);
