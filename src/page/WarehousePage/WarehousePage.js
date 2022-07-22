@@ -1,4 +1,4 @@
-import { API_URL_warehouse } from '../../utilities/utility';
+import { API_URL_Warehouse } from '../../utilities/utility';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import WarehouseItem from '../../components/WarehouseItem/WarehouseItem';
@@ -10,7 +10,7 @@ function WarehousePage() {
     useEffect(() => {
         const fetchData = async () => {
          try {
-            const response = await axios.get('http://localhost:8080/warehouse');
+            const response = await axios.get(`${API_URL_Warehouse}`);
             setwarehouse(response.data);
         } catch (error) {
           console.error(error)

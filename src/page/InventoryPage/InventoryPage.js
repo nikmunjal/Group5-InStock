@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import InventoryItem from '../../components/InventoryItem/InventoryItem';
 
+
 function InventoryPage() {
     const [inventory,setinventory] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -10,7 +11,7 @@ function InventoryPage() {
     useEffect(() => {
         const fetchData = async () => {
          try {
-            const response = await axios.get('http://localhost:8080/inventory');
+            const response = await axios.get(`${API_URL_Inventory}`);
             setinventory(response.data);
         } catch (error) {
           console.error(error)
@@ -34,12 +35,15 @@ function InventoryPage() {
 
       {inventory.map(item =>
       <InventoryItem key={item.id}
+      id = {item.id}
       name = {item.itemName}
       category = {item.category}
       status = {item.status}
       qty = {item.quantity}
       warehouse = {item.warehouseName}
+
       />
+
      )}
 
 
