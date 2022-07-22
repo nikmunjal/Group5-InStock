@@ -1,6 +1,7 @@
 import { API_URL_Inventory } from '../../utilities/utility';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import InventoryItem from '../../components/InventoryList/InventoryItem';
 
 function InventoryPage() {
     const [inventory,setinventory] = useState([]);
@@ -30,27 +31,22 @@ function InventoryPage() {
 
         <>
         <h2>Inventory List</h2>
-        <div className="Items">
-      {inventory.map((item) => (
-        <div className="item">{item.itemName}</div>
-      ))}
-    </div>
+
+      {inventory.map(item =>
+      <InventoryItem key={item.id}
+      name = {item.itemName}
+      category = {item.category}
+      status = {item.status}
+      qty = {item.quantity}
+      warehouse = {item.warehouseName}
+      />
+     )}
+
+
         </>
 
 
-    //     <>
 
-    //    <section className = 'Inventory List'>
-
-    //    {props.comments.map(comment =>
-    //         <CommentCard key={comment.name}
-    //         name = {comment.name}
-    //         timestamp = {comment.timestamp}
-    //         comment = {comment.comment}
-    //         />
-    //        )}
-    //    </section>
-    //     </>
     )
 }
 
