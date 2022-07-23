@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import sortIcon from "../../assets/Icons/sort-24px.svg";
-const api = "http://localhost:8080"
+import { API_URL_Warehouse } from "../../utilities/utility";
 
 function WarehouseDetails(props) {
     const [warehouse, setWarehouse] = useState(null);
@@ -13,7 +13,7 @@ function WarehouseDetails(props) {
     const warehouseID = props.match.params.id;
 
     useEffect((res) => {
-        axios.get(`${api}/warehouse/${warehouseID}`)
+        axios.get(`${API_URL_Warehouse}/${warehouseID}`)
         .then((res) => {
             if(res.status === 200){
                 setWarehouse(res.data);
@@ -21,7 +21,7 @@ function WarehouseDetails(props) {
             }
         });
 
-        // axios.get(`${api}/warehouse/${warehouseID}/inventory`)
+        // axios.get(`${API_URL_Warehouse}/${warehouseID}/inventory`)
         // .then((res) => {
         //     if(res.status === 200){
         //         setInventory(res.data);
@@ -35,20 +35,20 @@ function WarehouseDetails(props) {
         <section className="warehouse-details">
             <article className="header">
                 <div className="header__back">
-                    <Link to="/warehouse">
-                        <img src={backArrow} alt="back arrow" />
+                    <Link to="/">
+                        <img className="header__back--arrow"src={backArrow} alt="back arrow" />
                     </Link>
                 </div>
                 <h1 className="header__title">{warehouse.name}</h1>
                 <div>
-                    <Link to={`/warehouse/edit/${warehouse.id}`}>
-                        <img className="header__edit-icon" src={editIcon} alt="edit icon" />
-                        <p className="header__edit-text">Edit</p>
+                    <Link className="header__edit" to={`/warehouse/edit/${warehouse.id}`}>
+                        <img className="header__edit--icon" src={editIcon} alt="edit icon" />
+                        <p className="header__edit--text">Edit</p>
                     </Link>
                 </div>
             </article>
             <article className="details">
-                <div>
+                <div className="details__address-container">
                     <h6 className="details__subheader">WAREHOUSE ADDRESS:</h6>
                     <p className="details__value">{warehouse.address}, {warehouse.city}, {warehouse.country}</p>
                 </div>

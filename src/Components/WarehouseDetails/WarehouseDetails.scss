@@ -22,9 +22,74 @@ body {
         width: 1rem;
         height: 1rem;
         margin-right: 1rem;
+        margin-top: 0.35rem;
+
+        &--arrow {
+            min-height: 100%;
+            min-width: 100%;
+        }
     }
 
     &__title {
         @include h1-header($instock-black, right)
+    }
+
+    &__edit {
+        height: 2.25rem;
+        width: 2.25rem;
+        background-color: $instock-indigo;
+        position: absolute;
+        right: 1rem;
+        border-radius: 1.25rem;
+        text-align: center;
+
+        &--icon {
+            width: 1rem;
+            height: 1rem;
+            margin-top: 0.5rem;
+            filter: brightness(0) invert(1);
+        }
+
+        &--text {
+            visibility: hidden;
+        }
+    }
+}
+
+.details {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0.5rem;
+    margin-top: 0.5rem;
+    border-top: 1px solid $cloud;
+
+    &__subheader {
+        @include h4-header($slate, left)
+    }
+
+    &__value {
+        @include p2-body($instock-black, left)
+    }
+
+    &__address-container {
+        margin: 0.5rem 1rem;
+        width: 50%;
+        flex-wrap: wrap;
+    }
+
+    &__contact-container {
+        display: flex;
+        flex-direction: row;
+        margin: 0.5rem 1rem;
+    }
+
+    &__name-container {
+        width: 50%;
+        flex-wrap: wrap;
+    }
+
+    &__info-container {
+        width: 50%;
+        flex-wrap: wrap;
     }
 }
