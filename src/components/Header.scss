@@ -23,7 +23,7 @@
     max-width: 50%;
     align-self: center;
 
-}
+};
 
 
 //      HEADER LINKS SECTION
@@ -60,34 +60,46 @@
     @include tablet {
         width: 100%;
     }
-}
+};
 
 .warehouses__link {
     border: none;
     background-color: $background-dark;
-    color: $white;
+    color: $cloud;
+    height: 2.25rem;
     @include h3-labels-links-buttons($font-semi, center);
+};
 
-    @include tablet {
-        background-color: $instock-black;
-        border-color: $instock-black;
-        height: 2.25rem;
-        border-radius: 20px;
-    }
+.warehouses__link:hover {
+    text-decoration: underline;
+};
+
+.warehouses__link:active {
+    background-color: $instock-black;
+    border-color: $instock-black;
+    height: 2.25rem;
+    border-radius: 20px;
+    width: 100%;
+    color: $white;
 };
 
 .inventory__link {
+    border: none;
+    background-color: $background-dark;
+    color: $cloud;
     height: 2.25rem;
-    width: 100%;
-    border-radius: 20px;
-    color: $white;
-    background-color: $instock-black;
-    border-color: $instock-black;
     @include h3-labels-links-buttons($font-semi, center);
+};
 
-    @include tablet {
-        border: none;
-        background-color: $background-dark;
-    }
+.inventory__link:hover {
+    text-decoration: underline;
 }
 
+.inventory__link:active {
+    background-color: $instock-black;
+    border-color: $instock-black;
+    height: 2.25rem;
+    border-radius: 20px;
+    width: 100%;
+    color: $white;
+}
