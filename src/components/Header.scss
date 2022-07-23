@@ -7,9 +7,14 @@
     flex-direction: column;
     width: 100%;
     background-color: $background-dark;
-    padding: 1rem 16px;
+    padding: 1rem 1rem;
 
     @include tablet {
+        flex-direction: row;
+    }
+
+    @include desktop {
+        padding: 1rem 5rem;
         flex-direction: row;
     }
 };
@@ -24,20 +29,37 @@
 //      HEADER LINKS SECTION
 .header__links {
     display: flex;
-    justify-content: space-evenly;
     padding: 1rem 0;
+
+    @include tablet {
+        margin-left: auto;
+    };
+
+    @include desktop {
+        margin-left: auto;
+    }
 };
 
+// WAREHOUSE SIDE
 .header__links-left {
     width: 50%;
     display: flex;
-    justify-content: center
+    justify-content: center;
+
+    @include tablet {
+        width: 100%
+    }
 };
 
+// INVENTORY SIDE
 .header__links-right {
     width: 50%;
     display: flex;
     justify-content: center;
+
+    @include tablet {
+        width: 100%;
+    }
 }
 
 .warehouses__link {
@@ -45,18 +67,17 @@
     background-color: $background-dark;
     color: $white;
     @include h3-labels-links-buttons($font-semi, center);
-    
 
     @include tablet {
         background-color: $instock-black;
         border-color: $instock-black;
-        height: 36px;
+        height: 2.25rem;
         border-radius: 20px;
     }
 };
 
 .inventory__link {
-    height: 36px;
+    height: 2.25rem;
     width: 100%;
     border-radius: 20px;
     color: $white;
