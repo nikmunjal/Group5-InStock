@@ -72,9 +72,10 @@
 
 .warehouses__link:hover {
     text-decoration: underline;
+    cursor: pointer;
 };
 
-.warehouses__link:active {
+.warehouses__link-active {
     background-color: $instock-black;
     border-color: $instock-black;
     height: 2.25rem;
@@ -93,9 +94,10 @@
 
 .inventory__link:hover {
     text-decoration: underline;
+    cursor: pointer;
 }
 
-.inventory__link:active {
+.inventory__link-active {
     background-color: $instock-black;
     border-color: $instock-black;
     height: 2.25rem;
