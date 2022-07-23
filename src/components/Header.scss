@@ -4,9 +4,69 @@
 
 .header {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     width: 100%;
     background-color: $background-dark;
     padding: 1rem 16px;
+
+    @include tablet {
+        flex-direction: row;
+    }
+};
+
+.header__logo {
+    max-width: 50%;
+    align-self: center;
+
+}
+
+
+//      HEADER LINKS SECTION
+.header__links {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem 0;
+};
+
+.header__links-left {
+    width: 50%;
+    display: flex;
+    justify-content: center
+};
+
+.header__links-right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.warehouses__link {
+    border: none;
+    background-color: $background-dark;
+    color: $white;
+    @include h3-labels-links-buttons($font-semi, center);
+    
+
+    @include tablet {
+        background-color: $instock-black;
+        border-color: $instock-black;
+        height: 36px;
+        border-radius: 20px;
+    }
+};
+
+.inventory__link {
+    height: 36px;
+    width: 100%;
+    border-radius: 20px;
+    color: $white;
+    background-color: $instock-black;
+    border-color: $instock-black;
+    @include h3-labels-links-buttons($font-semi, center);
+
+    @include tablet {
+        border: none;
+        background-color: $background-dark;
+    }
 }
 
