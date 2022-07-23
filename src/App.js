@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import InventoryPage from './page/InventoryPage/InventoryPage';
 import WarehousePage from './page/WarehousePage/WarehousePage'
