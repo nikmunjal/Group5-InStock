@@ -1,9 +1,10 @@
 import closeIcon from '../../assets/Icons/close-24px.svg';
-
+import { useEffect, useState } from 'react';
 
 
 function InventoryDelete(props) {
 
+    const [item, setItem] = useState("");
 
     return (
         <div className="inventory__delete">
