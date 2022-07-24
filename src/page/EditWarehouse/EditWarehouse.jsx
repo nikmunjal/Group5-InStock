@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import axios from "axios";
 import { API_URL_Warehouse } from "../../utilities/utility";
 import { Link } from "react-router-dom";
-// import WarehouseItem from "../../components/WarehouseItem/WarehouseItem";
 import { useParams } from "react-router-dom";
 
 const EditWarehouse = (props) => {
