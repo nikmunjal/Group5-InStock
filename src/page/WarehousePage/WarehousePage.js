@@ -1,6 +1,7 @@
 import './WarehousePage.scss';
 import { API_URL_Warehouse } from '../../utilities/utility';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import WarehouseItem from '../../components/WarehouseItem/WarehouseItem';
 import Header from '../../components/Header';
@@ -39,7 +40,9 @@ function WarehousePage() {
             <div className='page-header'>
                 <h1 className='page-header__title'>Warehouse</h1>
                 <input type ="text" className="page-header__search" placeholder="Search..." />
+                <Link to="/add">
                 <button className='page-header__button' type = "button">+ Add New Warehouse</button>
+                </Link>
 
             </div>
             <ul className='table-titles'>
