@@ -39,6 +39,7 @@ function WarehousePage() {
 
       {warehouse.map(w =>
       <WarehouseItem key={w.id}
+      id={w.id}
       name = {w.name}
       address = {w.address}
       contactName = {w.contact.name}
