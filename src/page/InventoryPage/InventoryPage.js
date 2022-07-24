@@ -3,6 +3,7 @@ import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { API_URL_Inventory } from '../../utilities/utility';
 import { useEffect, useState } from 'react';
+import { Link } from "react-router-dom"
 import axios from 'axios';
 import InventoryItem from '../../components/InventoryList/InventoryItem.js';
 import sort from "../../assets/Icons/sort-24px.svg"
@@ -48,7 +49,9 @@ function InventoryPage() {
           <div className='page-header'>
             <h1 className='page-header__title'>Inventory</h1>
             <input type ="text" className="page-header__search" placeholder="Search..." />
+            <Link to="/inventory/add">
             <button className='page-header__button' type = "button">+ Add New Item</button>
+            </Link>
           </div>
           <div className='inventory__flex-container'>
           <ul className='table-titles'>
