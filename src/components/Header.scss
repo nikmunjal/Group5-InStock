@@ -11,6 +11,7 @@
 
     @include tablet {
         flex-direction: row;
+        padding: 1rem 2rem;
     }
 
     @include desktop {
@@ -74,7 +75,7 @@
     text-decoration: underline;
 };
 
-.warehouses__link:active {
+.warehouses__link-active {
     background-color: $instock-black;
     border-color: $instock-black;
     height: 2.25rem;
@@ -95,7 +96,7 @@
     text-decoration: underline;
 }
 
-.inventory__link:active {
+.inventory__link-active {
     background-color: $instock-black;
     border-color: $instock-black;
     height: 2.25rem;

@@ -2,9 +2,8 @@ import { API_URL_Inventory } from '../../utilities/utility';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import InventoryItem from '../../components/InventoryList/InventoryItem';
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 import InventoryDelete from "../../components/InventoryDelete/InventoryDelete";
+import Header from '../../components/Header';
 
 
 function InventoryPage() {
@@ -35,7 +34,10 @@ function InventoryPage() {
       return(
 
         <>
-        <Header />
+        <Header 
+          warehouseLink={""}
+          inventoryLink={"inventory__link-active"}
+        />
         <h2>Inventory List</h2>
 
         {inventory.map(item =>
@@ -48,7 +50,12 @@ function InventoryPage() {
         />
         )}
 
-        <Footer />
+        {inventory.map(item =>
+        <InventoryDelete
+          itemName = {item.itemName}
+        />
+        )}
+        
         </>
 
 
