@@ -1,10 +1,19 @@
+@use "../styles/global";
+@use "../styles/partials/mixins";
+
 .footer {
     width: 100%;
-    position: fixed;
-    bottom: 0;
+    background-color: $background-light;
+    height: 2rem;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 2rem 0;
+
+        @include tablet {
+            height: 3rem;
+        }
 };
 
 .footer__desc-container {

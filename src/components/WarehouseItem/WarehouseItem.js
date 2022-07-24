@@ -32,6 +32,5 @@ function WarehouseItem(props) {
             </ul>
         </>
     );
-}
 
 export default WarehouseItem;
