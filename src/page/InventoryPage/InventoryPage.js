@@ -1,9 +1,12 @@
+
+
 import { API_URL_Inventory } from '../../utilities/utility';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import InventoryItem from '../../components/InventoryList/InventoryItem';
-import InventoryDelete from "../../components/InventoryDelete/InventoryDelete";
+import InventoryItem from '../../components/InventoryItem/InventoryItem';
 import Header from '../../components/Header';
+import InventoryDelete from '../../components/InventoryDelete/InventoryDelete';
+import sort from '../../assets/Icons/sort-24px.svg';
 
 
 function InventoryPage() {
@@ -11,10 +14,13 @@ function InventoryPage() {
     const [loading, setLoading] = useState(true);
     
 
+
+
     useEffect(() => {
         const fetchData = async () => {
          try {
-            const response = await axios.get('http://localhost:8080/inventory');
+            const response = await axios.get(`${API_URL_Inventory}`);
+
             setinventory(response.data);
         } catch (error) {
           console.error(error)
@@ -34,28 +40,61 @@ function InventoryPage() {
       return(
 
         <>
-        <Header 
-          warehouseLink={""}
-          inventoryLink={"inventory__link-active"}
-        />
-        <h2>Inventory List</h2>
 
-        {inventory.map(item =>
-        <InventoryItem key={item.id}
-        name = {item.itemName}
-        category = {item.category}
-        status = {item.status}
-        qty = {item.quantity}
-        warehouse = {item.warehouseName}
+   <Header 
+            warehouseLink={""}
+            inventoryLink={"inventory__link-active"}
         />
+        <section className='inventory-page'>
+          <div className='page-header'>
+            <h1 className='page-header__title'>Inventory</h1>
+            <input type ="text" className="page-header__search" placeholder="Search..." />
+            <button className='page-header__button' type = "button">+ Add New Item</button>
+          </div>
+          <div className='inventory__flex-container'>
+          <ul className='table-titles'>
+              <li className='table-titles__item'><p className='title-tablet'>INVENTORY ITEM</p><img  className= "logo" alt = "updown arrows" src = {sort} /></li>
+              <li className='table-titles__item'><p className='title-tablet'>CATEGORY</p><img  className= "logo" alt = "updown arrows" src = {sort} /></li>
+              <li className='table-titles__item'><p className='title-tablet'>STATUS</p><img  className= "logo" alt = "updown arrows" src = {sort} /></li>
+              <li className='table-titles__item'><p className='title-tablet'>QTY</p><img  className= "logo" alt = "updown arrows" src = {sort} /></li>
+              <li className='table-titles__item'><p className='title-tablet'>WAREHOUSE</p><img  className= "logo" alt = "updown arrows" src = {sort} /></li>
+              <li className='table-titles__item'><p className='title-tablet'>ACTIONS</p><img  className= "logo" alt = "updown arrows" src = {sort} /></li>
+            </ul>
+
+          {inventory.map(item =>
+          <InventoryItem key={item.id}
+          name = {item.itemName}
+          category = {item.category}
+          status = {item.status}
+          qty = {item.quantity}
+          warehouse = {item.warehouseName}
+          />
         )}
+          </div>
+      </section>
 
-        {inventory.map(item =>
+
+      {inventory.map(item =>
+      <InventoryItem key={item.id}
+      id = {item.id}
+      name = {item.itemName}
+      category = {item.category}
+      status = {item.status}
+      qty = {item.quantity}
+      warehouse = {item.warehouseName}
+
+      />
+
+     )}
+
+      {inventory.map(item =>
         <InventoryDelete
           itemName = {item.itemName}
         />
         )}
+
         
+
         </>
 
 

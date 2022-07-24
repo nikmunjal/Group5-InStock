@@ -1,4 +1,112 @@
+
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/global' as *;
 @import '../../components/Header.scss';
 @import '../../components/Footer.scss';
 @import '../../components/InventoryDelete/InventoryDelete.scss';
+
+.inventory-page{
+    background-color: $white;
+    box-shadow: 0px 2px 5px;
+    border-radius: 3px;
+    padding: $mobile-padding-gutter;
+    //position: absolute;
+    //left: 4.27%;
+    //right: 4.27%;
+    //top: 5.85%;
+    //bottom: 4.13%;
+
+    @include tablet{
+        padding: $tablet-padding-gutter;
+    }
+
+    @include desktop{
+        padding-left: $desktop-padding-gutter;
+        padding-right: $desktop-padding-gutter;
+    }
+
+
+& .table-titles{
+    list-style:none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 $tablet-padding-gutter;
+    background-color: rgba(247, 248, 249, 0.7);
+    }
+& .table-titles__item{
+    display: flex;
+    flex: 0 1 auto;
+    padding: $mobile-padding-gutter 0;
+}
+}
+
+.page-header{
+    padding-left: $mobile-padding-after-header;
+    padding-bottom: $mobile-padding-after-header;
+    padding-right: $mobile-padding-after-header;
+    padding-top:$tablet-padding-gutter;
+    @include tablet{
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding-left: $tablet-padding-gutter;
+        padding-bottom: $mobile-padding-after-header;
+        padding-right: $tablet-padding-gutter;
+        padding-top:$tablet-padding-gutter;
+    }
+    &__title{
+
+        padding-bottom: $mobile-padding-before-header;
+        @include h1-header($instock-black,left);
+
+        @include tablet{
+        margin-right: auto;
+        }
+
+    }
+    &__search{
+        margin-bottom: $mobile-padding-before-header;
+        @include form-field;
+        background-image: url(../../assets/Icons/search-24px.svg);
+        background-repeat: no-repeat;
+        background-position: 95%;
+        background-origin: padding-box;
+        &:focus-visible{
+            @include form-field-active;
+        }
+        &::placeholder{
+            @include p3-body($cloud, left)
+
+        }
+        @include tablet{
+            margin-bottom:0;
+            margin-right: $mobile-padding-gutter;
+        }
+
+    }
+    &__button{
+
+       @include button ($instock-indigo);
+    }
+
+
+}
+
+.table-titles{
+    display:none;
+
+    @include tablet{
+        display:block;
+        @include h4-header($slate, left);
+    }
+}
+
+.inventory__flex-container{
+    @include tablet{
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    }
+  }
 
