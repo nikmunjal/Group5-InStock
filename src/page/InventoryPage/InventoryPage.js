@@ -1,3 +1,8 @@
+
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+
+
 import { API_URL_Inventory } from '../../utilities/utility';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
@@ -9,6 +14,7 @@ import Footer from '../../components/Footer';
 function InventoryPage() {
     const [inventory,setinventory] = useState([]);
     const [loading, setLoading] = useState(true);
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -38,6 +44,7 @@ function InventoryPage() {
             inventoryLink={"inventory__link-active"}
         />
         <h2>Inventory List</h2>
+
 
       {inventory.map(item =>
       <InventoryItem key={item.id}
