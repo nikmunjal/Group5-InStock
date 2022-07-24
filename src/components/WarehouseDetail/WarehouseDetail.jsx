@@ -76,26 +76,26 @@ function WarehouseDetails(props) {
 
                 <div className="inventory-list__header--left">
                     <div className="inventory-list__header--sub">
-                        <p className="inventory_list__header--text">INVENTORY ITEM</p>
+                        <p className="inventory-list__header--txt">INVENTORY ITEM</p>
                         <img className="inventory-list__header--icon" src={sortIcon} alt="sort icon" />
                     </div>
                     <div className="inventory-list__header--sub">
-                        <p className="inventory_list__header--text">CATEGORY</p>
+                        <p className="inventory-list__header--txt">CATEGORY</p>
                         <img className="inventory-list__header--icon" src={sortIcon} alt="sort icon" />
                     </div>
                 </div>
 
                 <div className="inventory-list__header--right">
                     <div className="inventory-list__header--sub">
-                        <p className="inventory_list__header--text">STATUS</p>
+                        <p className="inventory-list__header--txt">STATUS</p>
                         <img className="inventory-list__header--icon" src={sortIcon} alt="sort icon" />
                     </div>
                     <div className="inventory-list__header--sub">
-                        <p className="inventory_list__header--text">QUANTITY</p>
+                        <p className="inventory-list__header--txt">QUANTITY</p>
                         <img className="inventory-list__header--icon" src={sortIcon} alt="sort icon" />
                     </div>
                     <div className="inventory-list__header--actions">
-                        <p className="inventory_list__header--text">ACTIONS</p>
+                        <p className="inventory-list__header--txt">ACTIONS</p>
                     </div>
                 </div>
             </article>
