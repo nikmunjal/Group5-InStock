@@ -1,0 +1,39 @@
+@use "./fonts" as *;
+
+//primary colors
+$instock-black: #13182c;
+$instock-indigo: #2e66e5;
+$white: #ffffff;
+
+//secondary colors
+$slate: #5c667e;
+$cloud: #bdc5d5;
+
+//background colors
+$background-dark: #232940;
+$background-light: #f7f8f9;
+
+//stock colors
+$in-stock: #158463;
+$out-of-stock: #c94515;
+$in-stock-tab:rgba(21,132,99,0.7);
+$out-of-stock-tab:rgba(201,69,21,0.7);
+
+//fonts
+$font-regular: "titillium-web-regular";
+$font-semi: "titillium-web-semi-bold";
+
+//breakpoints
+
+$breakpoint-max-mobile: 767px;
+$breakpoint-max-tablet: 1279px;
+$breakpoint-min-tablet: 768px;
+$breakpoint-desktop: 1280px;
+
+//padding
+$mobile-padding-after-header:1.5rem;
+$mobile-padding-after-label:0.25rem;
+$mobile-padding-gutter:1rem;
+$mobile-padding-before-header:1rem;
+$tablet-padding-gutter:2rem;
+$desktop-padding-gutter:5rem;

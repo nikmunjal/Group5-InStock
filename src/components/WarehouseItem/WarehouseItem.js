@@ -14,12 +14,14 @@ function WarehouseItem(props) {
                     {props.contactPhone} {props.contactEmail}
                 </li>
                 <li className="warehouse__detail">
-                    <img
-                        className="warehouse__logo"
-                        alt="delete icon"
-                        src={delete__icon}
-                    />
-                    <Link to="/editwarehouse/:id">
+                    <Link to="">
+                        <img
+                            className="warehouse__logo"
+                            alt="delete icon"
+                            src={delete__icon}
+                        />
+                    </Link>
+                    <Link to={`/edit/${props.id}`}>
                         <img
                             className="warehouse__logo"
                             alt="edit icon"

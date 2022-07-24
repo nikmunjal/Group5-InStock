@@ -3,6 +3,7 @@ import error from "../../assets/Icons/error-24px.svg";
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import { API_URL_Warehouse } from "../../utilities/utility";
 
 const AddNewWareHouse = (props) => {
@@ -149,7 +150,9 @@ const AddNewWareHouse = (props) => {
     return (
         <div className="addnewwarehouse">
             <div className="addnewwarehouse__flex-wrapper">
-                <img src={backArrow} alt="back arrow" />
+                <Link to="/">
+                    <img src={backArrow} alt="back arrow" />
+                </Link>
                 <h1>Add New Warehouse</h1>
             </div>
             <div className="addnewwarehouse__form-div">

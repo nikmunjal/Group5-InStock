@@ -4,7 +4,9 @@
 // import React, { useState } from "react";
 // import axios from "axios";
 // import { API_URL_Warehouse } from "../../utilities/utility";
-// import WarehouseItem from "../../components/WarehouseItem/WarehouseItem";
+// import { Link } from "react-router-dom";
+// // import WarehouseItem from "../../components/WarehouseItem/WarehouseItem";
+// import { useParams } from "react-router-dom";
 
 // const EditWarehouse = (props) => {
 //     const [wareHouseData, setWarehouseData] = useState({
@@ -18,6 +20,7 @@
 //         email: "",
 //     });
 
+//     const { id } = useParams();
 //     const [submitted, setSubmitted] = useState(false);
 //     const [phoneError, setPhoneError] = useState(false);
 //     const [emailError, setEmailError] = useState(false);
@@ -182,8 +185,10 @@
 //     return (
 //         <div className="editwarehouse">
 //             <div className="editwarehouse__flex-wrapper">
-//                 <img src={backArrow} alt="back arrow" />
-//                 <h1>Add New Warehouse</h1>
+//                 <Link to="/">
+//                     <img src={backArrow} alt="back arrow" />
+//                 </Link>
+//                 <h1>Edit Warehouse</h1>
 //             </div>
 //             <div className="editwarehouse__form-div">
 //                 <form className="editwarehouse__form" onSubmit={handleSubmit}>
