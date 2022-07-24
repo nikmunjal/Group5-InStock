@@ -27,11 +27,15 @@
 
 
 & .table-titles{
+    display:none;
     list-style:none;
+    @include tablet{
     display: flex;
+    @include h4-header($slate, left);
     justify-content: space-between;
     padding: 0 $tablet-padding-gutter;
     background-color: rgba(247, 248, 249, 0.7);
+    }
     }
 & .table-titles__item{
     display: flex;
@@ -92,14 +96,7 @@
 
 }
 
-.table-titles{
-    display:none;
 
-    @include tablet{
-        display:block;
-        @include h4-header($slate, left);
-    }
-}
 
 .inventory__flex-container{
     @include tablet{
