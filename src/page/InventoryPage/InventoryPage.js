@@ -1,12 +1,11 @@
-
-
+import './InventoryPage.scss';
+import Header from "../../components/Header";
 import { API_URL_Inventory } from '../../utilities/utility';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import InventoryItem from '../../components/InventoryItem/InventoryItem';
-import Header from '../../components/Header';
+import InventoryItem from '../../components/InventoryList/InventoryItem.js';
+import sort from "../../assets/Icons/sort-24px.svg"
 import InventoryDelete from '../../components/InventoryDelete/InventoryDelete';
-import sort from '../../assets/Icons/sort-24px.svg';
 
 
 function InventoryPage() {
@@ -41,7 +40,7 @@ function InventoryPage() {
 
         <>
 
-   <Header 
+   <Header
             warehouseLink={""}
             inventoryLink={"inventory__link-active"}
         />
@@ -63,6 +62,7 @@ function InventoryPage() {
 
           {inventory.map(item =>
           <InventoryItem key={item.id}
+          id = {item.id}
           name = {item.itemName}
           category = {item.category}
           status = {item.status}
@@ -74,18 +74,9 @@ function InventoryPage() {
       </section>
 
 
-      {inventory.map(item =>
-      <InventoryItem key={item.id}
-      id = {item.id}
-      name = {item.itemName}
-      category = {item.category}
-      status = {item.status}
-      qty = {item.quantity}
-      warehouse = {item.warehouseName}
 
-      />
 
-     )}
+
 
       {inventory.map(item =>
         <InventoryDelete

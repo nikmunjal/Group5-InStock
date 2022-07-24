@@ -2,6 +2,7 @@ import './InventoryItem.scss';
 import delete__icon from "../../assets/Icons/delete_outline-24px.svg";
 import edit__icon from "../../assets/Icons/edit-24px.svg";
 import chevron from "../../assets/Icons/chevron_right-24px.svg";
+import { Link } from 'react-router-dom';
 
 
 
@@ -19,7 +20,7 @@ function InventoryItem(props){
 
             <ul className='name-list'>
               <li className='name-list__item'><p className="title">INVENTORY ITEM</p></li>
-              <li className='name-list__item'><p className='name'>{props.name}</p> <img  className= "logo" alt = "chevron" src = {chevron} /></li>
+              <li className='name-list__item'><p className='name'><Link to={`/inventory/${props.id}`}>{props.name}</Link></p> <img  className= "logo" alt = "chevron" src = {chevron} /></li>
             </ul>
             <ul className='category-list'>
               <li className='category-list__item'><p className="title">CATEGORY</p></li>

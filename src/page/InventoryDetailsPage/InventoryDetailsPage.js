@@ -2,6 +2,9 @@ import { useParams } from 'react-router-dom';
 import { API_URL_Inventory } from '../../utilities/utility';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import InventoryDetail from '../../components/InventoryDetail/InventoryDetail';
+import './InventoryDetailsPage.scss';
+import Header from '../../components/Header';
 
 function InventoryDetailsPage(){
 
@@ -29,10 +32,18 @@ function InventoryDetailsPage(){
       return <div className="Loading">Loading Details...</div>;
     }
 
-    console.log(details)
-  return (
+    console.log(details);
+  return(
+    <>
+    <Header 
+      warehouseLink={""}
+      inventoryLink={"inventory__link-active"}
+    />
+    <section className='inventory__detail'>
+      <InventoryDetail details = {details}/>
+    </section>
 
-          <h2>the item is {details.itemName}</h2>
+    </>
 
   )
 }

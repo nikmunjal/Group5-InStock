@@ -1,0 +1,125 @@
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/global' as *;
+
+.inventory-detail__card{
+background-color: $white;
+box-shadow: 0px 2px 5px;
+border-radius: 3px;
+//padding: $mobile-padding-after-header;
+height: 23rem;
+
+
+
+
+& ul{
+    list-style:none;
+}
+
+   & .detail-title{
+        @include h4-header($slate, left);
+        padding-bottom:$mobile-padding-after-label;
+    }
+
+}
+
+.detail-header{
+    display: flex;
+    justify-content: space-between;
+    padding: $mobile-padding-after-header;
+    align-items: center;
+    border-bottom: 1px solid $cloud;
+
+    @include tablet{
+        padding: $tablet-padding-gutter;
+        padding-bottom:$mobile-padding-after-header;
+    }
+
+    @include desktop{
+        padding: 2.75rem;
+        padding-top: $tablet-padding-gutter;
+        padding-bottom:$mobile-padding-after-header;
+
+
+    }
+
+
+
+    &__title{
+
+        @include h1-header($instock-black,left);
+        padding-left:0.75rem;
+
+    }
+
+    &__button{
+        @include button ($instock-indigo);
+        width: auto !important;
+
+
+    }
+
+    & .title__container{
+        display: flex;
+    }
+
+}
+    .details__card{
+        @include tablet{
+        padding:$tablet-padding-gutter;
+        padding-top:$mobile-padding-after-header;
+        display: flex;
+        justify-content: space-evenly;
+        & div{
+            flex:40%;
+        }
+
+        @include desktop{
+        padding: 2.75rem;
+        padding-bottom: $tablet-padding-gutter;
+        padding-top:$mobile-padding-after-header;
+        }
+        }
+    }
+
+   .detail-description-list{
+
+        padding-top: $mobile-padding-gutter;
+        padding-left:$mobile-padding-after-header;
+
+        @include tablet{
+            padding-top: 0;
+            padding-left:0;
+            padding-bottom:$tablet-padding-gutter;
+        }
+    }
+
+    .detail-category .detail-description .detail-qty .detail-warehouse{
+        @include p2-body($instock-black, left)
+     }
+
+     .detail__subcard{
+        padding-top: $mobile-padding-gutter;
+        display: flex;
+        flex-wrap: wrap;
+        padding-left:$mobile-padding-after-header;
+
+        @include tablet{
+            padding-top: 0;
+            padding-left:0;
+            padding-bottom: $tablet-padding-gutter;
+            justify-content: space-between;
+
+        }
+
+        & ul{
+            flex:50%;
+
+            @include tablet{
+            flex: 0 1 auto;
+            }
+
+        }
+     }
+    .detail-placeholder-container{
+        visibility: hidden;
+    }
