@@ -40,7 +40,12 @@ function InventoryItem(props){
             </ul>
             <ul className='action-list'>
               <li className='action-list__item'><p className="title">ACTIONS</p></li>
-              <li className='action-list__item'><img  className= "logo" alt = "delete icon" src = {delete__icon} /> <img  className= "logo" alt =  "edit icon" src = {edit__icon} /></li>
+              <li className='action-list__item'>
+                <Link to={`/inventory/delete/${props.id}`}>
+                  <img  className= "logo" alt = "delete icon" src = {delete__icon} /> 
+                </Link>
+                <img  className= "logo" alt =  "edit icon" src = {edit__icon} />
+              </li>
             </ul>
             <ul className='placeholder-container'>
               <li className='placeholder-container__item'><p className="title">blank</p></li>

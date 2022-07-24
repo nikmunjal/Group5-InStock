@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 import { API_URL_Inventory } from '../../utilities/utility';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import InventoryDetail from '../../components/InventoryDetail/InventoryDetail';
+import InventoryDetail from '../../components/InventoryDetails/InventoryDetails';
 import './InventoryDetailsPage.scss';
 import Header from '../../components/Header';
 

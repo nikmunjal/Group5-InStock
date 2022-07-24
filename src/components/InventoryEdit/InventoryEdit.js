@@ -1,7 +1,27 @@
 import arrowBack from '../../assets/Icons/arrow_back-24px.svg';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { API_URL_Inventory } from '../../utilities/utility';
+import { useParams } from 'react-router-dom';
 
 
 function InventoryEdit() {
+
+    // const {id} = useParams();
+    // const [form, setForm] = useState("");
+
+
+    // useEffect(() => {
+    //     try {
+    //         const inventoryEdit = axios.put(`${API_URL_Inventory}/${id}`);
+    //         setForm(inventoryEdit);
+    //     } catch (error) {
+    //         console.log(error);
+    //     } return form;
+    // });
+
+
+
 
     return (
         <div className="inventory__edit">

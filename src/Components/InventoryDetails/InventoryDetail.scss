@@ -15,7 +15,7 @@ height: 23rem;
     list-style:none;
 }
 
-   & .detail-title{
+& .detail-title{
         @include h4-header($slate, left);
         padding-bottom:$mobile-padding-after-label;
     }
@@ -63,7 +63,7 @@ height: 23rem;
     }
 
 }
-    .details__card{
+.details__card{
         @include tablet{
         padding:$tablet-padding-gutter;
         padding-top:$mobile-padding-after-header;
@@ -81,7 +81,7 @@ height: 23rem;
         }
     }
 
-   .detail-description-list{
+.detail-description-list{
 
         padding-top: $mobile-padding-gutter;
         padding-left:$mobile-padding-after-header;
@@ -119,7 +119,7 @@ height: 23rem;
             }
 
         }
-     }
+}
     .detail-placeholder-container{
         visibility: hidden;
     }
