@@ -1,36 +1,53 @@
 import "./WarehouseItem.scss";
 import delete__icon from "../../assets/Icons/delete_outline-24px.svg";
 import edit__icon from "../../assets/Icons/edit-24px.svg";
+import chevron from "../../assets/Icons/chevron_right-24px.svg";
+
 import { Link } from "react-router-dom";
 
-function WarehouseItem(props) {
-    return (
-        <>
-            <ul className="warehosue__details-list">
-                <li className="warehouse__detail">{props.name}</li>
-                <li className="warehouse__detail">{props.address}</li>
-                <li className="warehouse__detail">{props.contactName}</li>
-                <li className="warehouse__detail">
-                    {props.contactPhone} {props.contactEmail}
-                </li>
-                <li className="warehouse__detail">
-                    <Link to="">
-                        <img
-                            className="warehouse__logo"
-                            alt="delete icon"
-                            src={delete__icon}
-                        />
-                    </Link>
-                    <Link to={`/edit/${props.id}`}>
-                        <img
-                            className="warehouse__logo"
-                            alt="edit icon"
-                            src={edit__icon}
-                        />
-                    </Link>
-                </li>
+
+function WarehouseItem(props)
+{
+  return (
+
+
+      <>
+
+
+
+
+
+          <div className='warehouse-item__card'>
+            <div className='grouping' id='1'>
+            <ul className='name-list'>
+              <li className='name-list__item'><p className="title">WAREHOUSE</p></li>
+              <li className='name-list__item'><p className='name'>{props.name}</p> <img  className= "logo" alt = "chevron" src = {chevron} /></li>
             </ul>
-        </>
-    );
+            <ul className='address-list'>
+              <li className='address-list__item'><p className="title">ADDRESS</p></li>
+              <li className='address-list__item'><p className='address'>{props.address}</p></li>
+            </ul></div>
+
+          <div className='grouping' id="2">
+          <ul className='contactName-list'>
+            <li className='contactName-list__item'><p className="title">CONTACT NAME</p></li>
+            <li className='contactName-list__item'><p className='contactName'>{props.contactName}</p></li>
+          </ul>
+          <ul className='contactInfo-list'>
+            <li className='contactInfo-list__item'><p className="title">CONTACT INFORMATION</p></li>
+            <li className='contactInfo-list__item'><p className='contactInfo'>{props.contactPhone} {props.contactEmail}</p></li>
+          </ul></div>
+          <div className='grouping' id='3'>
+          <ul className='action-list'>
+            <li className='action-list__item'><p className="title">ACTIONS</p></li>
+            <li className='action-list__item'><Link to=""><img  className= "logo" alt = "delete icon" src = {delete__icon} /></Link>  <Link to={`/edit/${props.id}`}><img  className= "logo" alt =  "edit icon" src = {edit__icon} /></Link></li>
+          </ul></div>
+
+          </div>
+
+      </>
+  )
+}
+
 
 export default WarehouseItem;
