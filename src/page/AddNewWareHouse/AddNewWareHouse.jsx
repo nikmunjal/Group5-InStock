@@ -124,20 +124,17 @@ const AddNewWareHouse = (props) => {
             isValidPhoneNumber(phone) &&
             isValidateEmail(email)
         ) {
-            axios
-                .post(API_URL_Warehouse, {
-                    name,
-                    address,
-                    city,
-                    country,
-                    contactName,
-                    position,
-                    phone,
-                    email,
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
+            axios.post(API_URL_Warehouse, {
+                name,
+                address,
+                city,
+                country,
+                contactName,
+                position,
+                phone,
+                email,
+            });
+
             setPhoneError(true);
             setEmailError(true);
         }
