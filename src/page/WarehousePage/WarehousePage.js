@@ -1,7 +1,6 @@
 import { API_URL_Warehouse } from '../../utilities/utility';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-
 import WarehouseItem from '../../components/WarehouseItem/WarehouseItem';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
@@ -33,7 +32,7 @@ function WarehousePage() {
       return(
 
         <>
-        <Header 
+        <Header
             warehouseLink={"warehouses__link-active"}
             inventoryLink={""}/>
         <h2>Warehouse List</h2>
