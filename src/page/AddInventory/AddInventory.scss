@@ -164,6 +164,9 @@
         @include tablet {
             height: 38px;
         }
+        @include desktop {
+            width: 25%;
+        }
 
     &--hidden {
         display: none;
