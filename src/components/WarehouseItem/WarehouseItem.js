@@ -9,19 +9,15 @@ import { Link } from "react-router-dom";
 function WarehouseItem(props)
 {
   return (
-
-
       <>
-
-
-
-
-
           <div className='warehouse-item__card'>
             <div className='grouping' id='1'>
             <ul className='name-list'>
               <li className='name-list__item'><p className="title">WAREHOUSE</p></li>
-              <li className='name-list__item'><p className='name'>{props.name}</p> <img  className= "logo" alt = "chevron" src = {chevron} /></li>
+              <Link to={`/${props.id}`}>
+              <li className='name-list__item'>
+                <p className='name'>{props.name}</p> <img  className= "logo" alt = "chevron" src = {chevron} /></li>
+                </Link>
             </ul>
             <ul className='address-list'>
               <li className='address-list__item'><p className="title">ADDRESS</p></li>
