@@ -78,6 +78,18 @@ function InventoryEdit() {
                 </section>
 
 
+                <section className="inventory__edit-buttons">
+                    
+                    <button className="cancel__button">
+                        Cancel
+                    </button>
+                    <button className="save__button">
+                        Save
+                    </button>
+
+                </section>
+
+
             </form>
         
         </div>

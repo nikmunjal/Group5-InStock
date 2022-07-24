@@ -6,6 +6,7 @@ import InventoryDetail from '../../components/InventoryDetail/InventoryDetail';
 import './InventoryDetailsPage.scss';
 import Header from '../../components/Header';
 
+
 function InventoryDetailsPage(){
 
 
@@ -42,6 +43,7 @@ function InventoryDetailsPage(){
     <section className='inventory__detail'>
       <InventoryDetail details = {details}/>
     </section>
+
 
     </>
 
