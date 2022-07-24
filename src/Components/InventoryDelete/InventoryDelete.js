@@ -26,7 +26,7 @@ function InventoryDelete(props) {
     });
 
     const itemDelete = () => {
-        e.inventoryItem.id.remove()
+        item.id.remove()
     }
 
 
