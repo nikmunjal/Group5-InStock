@@ -1,4 +1,4 @@
-@use "../../styles/partials/variables" as *;
+// @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 @use "../../styles/global" as *;
 
@@ -17,7 +17,7 @@ body {
 
     margin-top: -4rem;
 
-    @include mQ($breakpoint-tablet) {
+    @include tablet {
     margin-top: -5rem;
     }
     }
@@ -79,7 +79,7 @@ body {
         filter: brightness(0) invert(1);
         margin-top: 0.5rem;
 
-        @include mQ($breakpoint-tablet) {
+        @include tablet {
         height: 1.25rem;
         width: 1.25rem;
         margin-left: 0.75rem;
