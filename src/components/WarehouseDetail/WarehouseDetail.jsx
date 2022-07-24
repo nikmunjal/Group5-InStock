@@ -1,5 +1,5 @@
 import "./WarehouseDetail.scss";
-// import WarehouseInvCard from "../WarehouseInvCard/WarehouseInvCard";
+import WarehouseItemCard from "../WarehouseItemCard/WarehouseItemCard";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -10,7 +10,7 @@ import { API_URL_Warehouse } from "../../utilities/utility";
 
 function WarehouseDetails(props) {
     const [warehouse, setWarehouse] = useState(null);
-    // const [inventory, setInventory] = useState([]);
+    const [inventory, setInventory] = useState([]);
     const warehouseID = props.match.params.id;
 
     useEffect((res) => {
@@ -22,12 +22,12 @@ function WarehouseDetails(props) {
             }
         });
 
-        // axios.get(`${API_URL_Warehouse}/${warehouseID}/inventory`)
-        // .then((res) => {
-        //     if(res.status === 200){
-        //         setInventory(res.data);
-        //     }
-        // });
+        axios.get(`${API_URL_Warehouse}/${warehouseID}/inventory`)
+        .then((res) => {
+            if(res.status === 200){
+                setInventory(res.data);
+            }
+        });
     },[warehouseID]);
 
     if (!warehouse) return null;
@@ -93,11 +93,11 @@ function WarehouseDetails(props) {
                     </div>
                 </div>
             </article>
-            {/* <article>
+            <article>
                 {inventory.map((item) => (
-                    <WarehouseInvCard key={item.id} item={item} />
+                    <WarehouseItemCard key={item.id} item={item} />
                 ))}
-            </article> */}
+            </article>
         </section>
     )
 }
