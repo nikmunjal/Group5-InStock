@@ -1,6 +1,7 @@
 import closeIcon from '../../assets/Icons/close-24px.svg';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 
 function InventoryDelete(props) {
@@ -20,7 +21,13 @@ function InventoryDelete(props) {
         if (item) {
             return item.itemName
         }
+
+        
     });
+
+    const itemDelete = () => {
+        e.inventoryItem.id.remove()
+    }
 
 
 
@@ -41,9 +48,11 @@ function InventoryDelete(props) {
                 <button className="inventory__cancel-button">
                     Cancel
                 </button>
-                <button className="inventory__delete-button">
+                
+                <button className="inventory__delete-button" onClick={itemDelete()}>
                     Delete
                 </button>
+                
 
             </section>
         </div>
