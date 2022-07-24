@@ -3,13 +3,29 @@ import delete__icon from "../../assets/Icons/delete_outline-24px.svg";
 import edit__icon from "../../assets/Icons/edit-24px.svg";
 import chevron from "../../assets/Icons/chevron_right-24px.svg";
 import { Link } from 'react-router-dom';
-
+import Modal from 'react-modal';
+import { useState } from 'react';
 
 
 
 
 function InventoryItem(props){
 
+  const [open, setOpen] = useState(false);
+
+  function openDeleteModal() {
+    setOpen(true);
+    console.log("please work");
+    console.log(open);
+  };
+
+  function afterOpenModal() {
+    console.log("beep");
+  }
+
+  function closeDeleteModal() {
+    setOpen(false);
+  };
 
 
   return (
@@ -41,9 +57,27 @@ function InventoryItem(props){
             <ul className='action-list'>
               <li className='action-list__item'><p className="title">ACTIONS</p></li>
               <li className='action-list__item'>
-                <Link to={`/inventory/delete/${props.id}`}>
-                  <img  className= "logo" alt = "delete icon" src = {delete__icon} /> 
-                </Link>
+                <img onClick={openDeleteModal} className= "logo" alt = "delete icon" src = {delete__icon} /> 
+                
+                <Modal isOpen={open} active={afterOpenModal} close={closeDeleteModal} className="modal">
+                  
+                    <h1 className="inventory__delete-header">
+                      Delete {props.itemName} inventory item?
+                    </h1>
+                    <p className="inventory__delete-desc">
+                      Please confirm that you'd like to delete {props.itemName} from the inventory list. You won't be able to undo this action.
+                    </p>
+                    <section className="inventory__delete-options">
+                      <button className="inventory__cancel-button" onClick={closeDeleteModal}>
+                          Cancel
+                      </button>
+                      
+                      <button className="inventory__delete-button">
+                          Delete
+                      </button>
+                    </section>
+
+                </Modal>
                 <img  className= "logo" alt =  "edit icon" src = {edit__icon} />
               </li>
             </ul>

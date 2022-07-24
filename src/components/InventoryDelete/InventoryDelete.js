@@ -15,7 +15,7 @@ function InventoryDelete(props) {
         const inventoryList = axios.get(`http://localhost:8080/inventory/`)
             setInventory(inventoryList.data);
 
-        const inventoryItem = axios.get(`http://localhost:8080/inventory/${inventory.data[0].id}`)
+        const inventoryItem = axios.get(`http://localhost:8080/inventory/${inventory.data.id}`)
             setItem(inventoryItem.data);
 
         if (item) {
