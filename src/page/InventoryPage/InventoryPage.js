@@ -1,14 +1,10 @@
-
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
-
-
 import { API_URL_Inventory } from '../../utilities/utility';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import InventoryItem from '../../components/InventoryItem/InventoryItem';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import sort from "../../assets/Icons/sort-24px.svg";
 
 
 
