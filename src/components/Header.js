@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import headerLogo from '../assets/Logo/InStock-Logo.svg';
 
 
-function Header() {
+function Header(props) {
 
     return (
         <div className="header">
@@ -11,12 +11,12 @@ function Header() {
 
             <section className="header__links">
                 <Link className="header__links-left" to="/">
-                    <button className="warehouses__link">
+                    <button className={`warehouses__link ${props.warehouseLink}`}>
                         Warehouses
                     </button>
                 </Link>
                 <Link className="header__links-right" to="/inventory">
-                    <button className="inventory__link">
+                    <button className={`inventory__link ${props.inventoryLink}`}>
                         Inventory
                     </button>
                 </Link>
