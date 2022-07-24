@@ -1,0 +1,107 @@
+@import '../styles/partials/variables';
+@import '../styles/partials/mixins';
+@import '../styles/partials/fonts';
+
+.header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: $background-dark;
+    padding: 1rem 1rem;
+
+    @include tablet {
+        flex-direction: row;
+    }
+
+    @include desktop {
+        padding: 1rem 5rem;
+        flex-direction: row;
+    }
+};
+
+.header__logo {
+    max-width: 50%;
+    align-self: center;
+
+};
+
+
+//      HEADER LINKS SECTION
+.header__links {
+    display: flex;
+    padding: 1rem 0;
+
+    @include tablet {
+        margin-left: auto;
+    };
+
+    @include desktop {
+        margin-left: auto;
+    }
+};
+
+// WAREHOUSE SIDE
+.header__links-left {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+    @include tablet {
+        width: 100%
+    }
+};
+
+// INVENTORY SIDE
+.header__links-right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+    @include tablet {
+        width: 100%;
+    }
+};
+
+.warehouses__link {
+    border: none;
+    background-color: $background-dark;
+    color: $cloud;
+    height: 2.25rem;
+    @include h3-labels-links-buttons($font-semi, center);
+};
+
+.warehouses__link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+};
+
+.warehouses__link-active {
+    background-color: $instock-black;
+    border-color: $instock-black;
+    height: 2.25rem;
+    border-radius: 20px;
+    width: 100%;
+    color: $white;
+};
+
+.inventory__link {
+    border: none;
+    background-color: $background-dark;
+    color: $cloud;
+    height: 2.25rem;
+    @include h3-labels-links-buttons($font-semi, center);
+};
+
+.inventory__link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.inventory__link-active {
+    background-color: $instock-black;
+    border-color: $instock-black;
+    height: 2.25rem;
+    border-radius: 20px;
+    width: 100%;
+    color: $white;
+}
