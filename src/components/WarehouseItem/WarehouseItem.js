@@ -49,7 +49,7 @@ function WarehouseItem(props) {
                             alt="delete icon"
                             src={delete__icon}
                         />
-                        {/* <Modal
+                        <Modal
                             isOpen={open}
                             onAfterOpen={afterOpenModal}
                             onRequestClose={closeModal}
@@ -64,7 +64,7 @@ function WarehouseItem(props) {
                             </div>
                             <button onClick={closeModal}>Cancel</button>
                             <button onClick={removeWarehouse}> Delete</button>
-                        </Modal> */}
+                        </Modal>
                     </Link>
                     <Link to={`/edit/${props.id}`}>
                         <img

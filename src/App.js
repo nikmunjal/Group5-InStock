@@ -7,7 +7,6 @@ import AddInventory from "./page/AddInventory/AddInventory";
 import WarehouseDetail from "./components/WarehouseDetail/WarehouseDetail";
 import AddNewWareHouse from "./page/AddNewWareHouse/AddNewWareHouse";
 import EditWarehouse from "./page/EditWarehouse/EditWarehouse";
-// import DeleteWarehouse from "./components/DeleteWarehouse/DeleteWarehouse";
 
 function App() {
     return (
@@ -20,8 +19,6 @@ function App() {
                 <Route path="/inventory" component={InventoryPage} />
                 <Route path="/:id" component={WarehouseDetail} />
                 <Route path="/edit/:id" component={EditWarehouse} />
-
-                {/* <Route path="/delete" component={DeleteWarehouse} /> */}
             </Switch>
         </BrowserRouter>
     );
