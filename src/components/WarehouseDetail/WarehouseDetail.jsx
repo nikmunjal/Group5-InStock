@@ -2,6 +2,8 @@ import "./WarehouseDetail.scss";
 import WarehouseItemCard from "../WarehouseItemCard/WarehouseItemCard";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 import { Link } from "react-router-dom";
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
@@ -33,18 +35,22 @@ function WarehouseDetails(props) {
     if (!warehouse) return null;
 
     return(
+        <>
+        <Header
+        warehouseLink={"warehouses__link-active"}
+        inventoryLink={""}/>
         <section className="warehouse-details">
-            <article className="header">
-                <div className="header__back">
+            <article className="head">
+                <div className="head__back">
                     <Link to="/">
-                        <img className="header__back--arrow"src={backArrow} alt="back arrow" />
+                        <img className="head__back--arrow"src={backArrow} alt="back arrow" />
                     </Link>
                 </div>
-                <h1 className="header__title">{warehouse.name}</h1>
+                <h1 className="head__title">{warehouse.name}</h1>
                 <div>
-                    <Link className="header__edit" to={`/warehouse/edit/${warehouse.id}`}>
-                        <img className="header__edit--icon" src={editIcon} alt="edit icon" />
-                        <p className="header__edit--text">Edit</p>
+                    <Link className="head__edit" to={`/warehouse/edit/${warehouse.id}`}>
+                        <img className="head__edit--icon" src={editIcon} alt="edit icon" />
+                        <p className="head__edit--text">Edit</p>
                     </Link>
                 </div>
             </article>
@@ -99,6 +105,8 @@ function WarehouseDetails(props) {
                 ))}
             </article>
         </section>
+        <Footer/>
+        </>
     )
 }
 

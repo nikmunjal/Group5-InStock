@@ -135,3 +135,10 @@ p.Out{
   background-color: $white
 };
 
+.inventory__delete-desc {
+    padding: 1rem 0;
+}
+
+.inventory__modal-button {
+    @include h3-labels-links-buttons($cloud, center);
+}
