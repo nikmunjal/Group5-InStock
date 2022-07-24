@@ -1,8 +1,9 @@
-import './WarehouseItem.scss';
+import "./WarehouseItem.scss";
 import delete__icon from "../../assets/Icons/delete_outline-24px.svg";
 import edit__icon from "../../assets/Icons/edit-24px.svg";
 import chevron from "../../assets/Icons/chevron_right-24px.svg";
-import sort from "../../assets/Icons/sort-24px.svg"
+
+import { Link } from "react-router-dom";
 
 
 function WarehouseItem(props)
@@ -39,7 +40,7 @@ function WarehouseItem(props)
           <div className='grouping' id='3'>
           <ul className='action-list'>
             <li className='action-list__item'><p className="title">ACTIONS</p></li>
-            <li className='action-list__item'><img  className= "logo" alt = "delete icon" src = {delete__icon} /> <img  className= "logo" alt =  "edit icon" src = {edit__icon} /></li>
+            <li className='action-list__item'><Link to=""><img  className= "logo" alt = "delete icon" src = {delete__icon} /></Link>  <Link to={`/edit/${props.id}`}><img  className= "logo" alt =  "edit icon" src = {edit__icon} /></Link></li>
           </ul></div>
 
           </div>

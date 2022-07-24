@@ -6,6 +6,8 @@ import { Link } from "react-router-dom"
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
 import error from "../../assets/Icons/error-24px.svg";
 import Select from "react-select"
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 
 function AddInventory(props) {
@@ -122,15 +124,21 @@ function AddInventory(props) {
     }
 
     return(
+        <>
+        <Header
+        warehouseLink={""}
+        inventoryLink={"inventory__link-active"}
+        />
         <article className="add-inv">
-            <section className="add-inv__section">
+            <section className="add-inv__header">
                 <Link to="/inventory">
                     <img src={backArrow} alt="back arrow" />
                 </Link>
                 <h1 className="add-inv__title">Add New Inventory Item</h1>
             </section>
             <form onSubmit={handleSubmit} className="add-inv__form">
-                <section className="add-inv__container">
+            <div className="add-inv__container">
+                <section className="add-inv__section">
                     <h2 className="add-inv__subheader">Item Details</h2>
                     <label htmlFor="itemName" className="add-inv__label">Item Name</label>
                     <input 
@@ -209,7 +217,7 @@ function AddInventory(props) {
                             />
                             <label htmlFor="instock" className="add-inv__radio-label">In stock</label>
                         </div>
-                        <div className="add-inv__radio-buttons">
+                        <div className="add-inv__rb-container">
                             <input 
                                 type="radio"
                                 name="status"
@@ -267,6 +275,7 @@ function AddInventory(props) {
                         </div>
                     )}
                 </section>
+                </div>
                 <section className="add-inv__buttons">
                     <Link to="/inventory">
                         <button className="add-inv__cancel">Cancel</button>
@@ -275,6 +284,8 @@ function AddInventory(props) {
                 </section>
             </form>
         </article>
+        <Footer/>
+        </>
     )
 }
 

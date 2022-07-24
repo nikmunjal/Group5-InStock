@@ -7,33 +7,29 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer'
 import sort from "../../assets/Icons/sort-24px.svg"
 
-
 function WarehousePage() {
-    const [warehouse,setwarehouse] = useState([]);
+    const [warehouse, setwarehouse] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
-         try {
-            const response = await axios.get(`${API_URL_Warehouse}`);
-            setwarehouse(response.data);
-        } catch (error) {
-          console.error(error)
-        }
-        setLoading(false);
-      };
+            try {
+                const response = await axios.get(`${API_URL_Warehouse}`);
+                setwarehouse(response.data);
+            } catch (error) {
+                console.error(error);
+            }
+            setLoading(false);
+        };
 
-      fetchData();
+        fetchData();
     }, []);
 
     if (loading) {
         return <div className="Loading">Loading warehouse list...</div>;
-      }
+    }
 
-
-
-      return(
-
+    return (
         <>
         <Header
             warehouseLink={"warehouses__link-active"}
@@ -55,23 +51,23 @@ function WarehousePage() {
 
                </ul>
 
-      {warehouse.map(w =>
-      <WarehouseItem key={w.id}
-      name = {w.name}
-      address = {w.address}
-      contactName = {w.contact.name}
-      contactPhone = {w.contact.phone}
-      contactEmail = {w.contact.email}
+            {warehouse.map((w) => (
+                <WarehouseItem
+                    key={w.id}
+                    id={w.id}
+                    name={w.name}
+                    address={w.address}
+                    contactName={w.contact.name}
+                    contactPhone={w.contact.phone}
+                    contactEmail={w.contact.email}
+                />
+            ))}
 
-      />
-     )}
+
       </section>
         <Footer />
         </>
-
-
-
-    )
+    );
 }
 
 export default WarehousePage;

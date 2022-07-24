@@ -1,0 +1,252 @@
+@use "../../styles/global" as *;
+@use "../../styles/partials/mixins/" as *;
+// @use "../../styles/partials/variables" as *;
+
+.add-inv {
+    margin: -4rem 1.5rem 1rem;
+    background-color: white;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    border-radius: 2px;
+
+    @include tablet {
+        margin: -5rem 2rem 10rem;
+        max-width: 63.75rem;
+    }
+
+    @include desktop {
+        margin: -5rem auto 10rem;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: center;
+        padding: 1.5rem 0;
+
+    @include tablet {
+        border-bottom: 1px solid $cloud;
+        justify-content: flex-start;
+        padding: 1.5rem 2rem;
+    }
+}
+
+    &__title {
+        @include h1-header($instock-black, left);
+        padding-left: 0.25rem;
+    }
+
+    &__container {
+        @include tablet {
+            display: flex;
+        }
+    }
+
+    &__section {
+        display: flex;
+        flex-direction: column;
+        border-top: 1px solid $cloud;
+        padding: 1rem;
+
+    @include tablet {
+        width: 50%;
+        margin: 1.5rem 0;
+        padding: 0.25rem 2rem;
+        border-top: none;
+
+        &:last-of-type {
+        border-left: 1px solid $cloud;
+        border-top: none;
+        }
+    }
+    }
+
+    &__subheader {
+        @include h2-subheader($instock-black, left);
+        padding: 0.5rem 0;
+        margin-bottom: 1.5rem;
+    }
+
+    &__form {
+        text-align: left;
+    }
+
+    &__label {
+        @include h3-labels-links-buttons($instock-black, left);
+        margin-bottom: 0.5rem;
+        &--hidden {
+            display: none;
+        }
+    }
+
+    &__name-value {
+            height: 36px;
+            width: 100%;
+            padding: 0 1rem;
+            border-radius: 20px;
+            margin-bottom: 0.5rem;
+            border: 1px solid $cloud;
+            @include p2-body($instock-black, left);
+
+            @include tablet {
+                height: 38px;
+            }
+    &--error {
+        border-color: $out-of-stock;
+    }
+    }
+    &:active {
+        border: 1px solid $instock-indigo;
+        color: $instock-black;
+    }
+
+    &__desc-value {
+        resize: none;
+        height: 7.5rem;
+        padding-top: 0.5rem;
+        margin-bottom: 1rem;
+        padding-left: 1rem;
+        width: 100%;
+        border-radius: 20px;
+        border: 1px solid $cloud;
+        @include p2-body($instock-black, left);
+        @include tablet {
+            height: 7.5rem;
+        }
+    &--error {
+        border-color: $out-of-stock;
+    }   
+}
+
+
+    &__select {
+        @include p2-body($instock-black, left);
+        margin-bottom: 1rem;
+
+        @include tablet {
+            height: 38px;
+        }
+    }
+
+    &__radio-buttons {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    &__rb-container {
+        text-align: center;
+        margin-bottom: 1rem;
+        &:last-of-type {
+            margin-left: 6rem;
+        }
+    }
+
+    &__rb {
+        margin-right: 0.25rem;
+    }
+
+    &__radio-label {
+        font-size: 0.813rem;
+        line-height: 1.25rem;
+            &:first-child {
+                margin-right: 4.5rem;
+            }
+    }
+
+    &__quantity {
+        height: 36px;
+        width: 100%;
+        padding: 0 1rem;
+        border-radius: 20px;
+        margin-bottom: 0.5rem;
+        border: 1px solid $cloud;
+        @include p2-body($instock-black, left);
+
+        @include tablet {
+            height: 38px;
+        }
+        @include desktop {
+            width: 25%;
+        }
+
+    &--hidden {
+        display: none;
+    }
+
+    &--invalid {
+        border-color: $out-of-stock;
+    }
+    }
+
+    &__buttons {
+        background-color: $background-light;
+        display: flex;
+        padding: 1rem;
+
+        @include tablet {
+            justify-content: flex-end;
+            height: 70px;
+        }
+    }
+
+    &__cancel {
+        width: 40vw;
+        font-size: 0.813rem;
+        line-height: 1.25rem;
+        height: 2.25rem;
+        background-color: $white;
+        border-radius: 20px;
+        color: $slate;
+        border: 1px solid $cloud;
+        padding: 0 1rem;
+        margin-right: 0.5rem;
+
+    @include tablet {
+        height: 2.375rem;
+        width: auto;
+    }
+
+    &:hover {
+        color: $instock-indigo;
+        border: 1px solid $instock-indigo;
+    }
+    }
+
+    &__add-button {
+        width: 50vw;
+        font-size: 0.813rem;
+        line-height: 1.25rem;
+        height: 2.25rem;
+        background-color: $instock-indigo;
+        border-radius: 20px;
+        border: none;
+        color: white;
+        padding: 0 1rem;
+        margin-left: 0.5rem;
+
+    @include tablet {
+        height: 2.375rem;
+        width: auto;
+    }
+
+    &:hover {
+        background-color: $background-dark;
+    }
+    }
+
+    &__input-error {
+        font-size: 0.688rem;
+        line-height: 1.25rem;
+        display: flex;
+        align-items: center;
+        color: $out-of-stock;
+        padding-bottom: 1rem;
+
+    @include tablet {
+        font-size: 0.75rem;
+    }
+    }
+
+    &__input-error-icon {
+        height: 1.5em;
+    }
+}
