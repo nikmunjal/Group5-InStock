@@ -1,18 +1,28 @@
+
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+
+
 import { API_URL_Inventory } from '../../utilities/utility';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import InventoryItem from '../../components/InventoryList/InventoryItem';
-import './InventoryPage.scss';
-import sort from "../../assets/Icons/sort-24px.svg";
+import InventoryItem from '../../components/InventoryItem/InventoryItem';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+
+
 
 function InventoryPage() {
     const [inventory,setinventory] = useState([]);
     const [loading, setLoading] = useState(true);
 
+
+
     useEffect(() => {
         const fetchData = async () => {
          try {
-            const response = await axios.get('http://localhost:8080/inventory');
+            const response = await axios.get(`${API_URL_Inventory}`);
+
             setinventory(response.data);
         } catch (error) {
           console.error(error)
@@ -32,6 +42,11 @@ function InventoryPage() {
       return(
 
         <>
+
+   <Header 
+            warehouseLink={""}
+            inventoryLink={"inventory__link-active"}
+        />
         <section className='inventory-page'>
           <div className='page-header'>
             <h1 className='page-header__title'>Inventory</h1>
@@ -59,6 +74,23 @@ function InventoryPage() {
         )}
           </div>
       </section>
+
+
+      {inventory.map(item =>
+      <InventoryItem key={item.id}
+      id = {item.id}
+      name = {item.itemName}
+      category = {item.category}
+      status = {item.status}
+      qty = {item.quantity}
+      warehouse = {item.warehouseName}
+
+      />
+
+     )}
+
+        <Footer />
+
         </>
 
 

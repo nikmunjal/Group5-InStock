@@ -1,6 +1,9 @@
+
 @use '../../styles/partials/mixins' as *;
 @use '../../styles/partials/variables' as *;
 @use '../../styles/global' as *;
+@import '../../components/Header.scss';
+@import '../../components/Footer.scss';
 
 .inventory-page{
     background-color: $white;
@@ -105,3 +108,4 @@
     align-content: space-between;
     }
   }
+

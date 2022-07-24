@@ -1,0 +1,18 @@
+
+.footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+};
+
+.footer__desc-container {
+    display: flex;
+    align-content: center;
+}
+
+.footer__desc {
+    @include p3-body($slate, center);
+}

@@ -1,5 +1,5 @@
-@use "./variables" as *;
-
+// @use "./variables" as *;
+@import './variables';
 
 // breakpoints for certain widths of the page
 @mixin mobile {
