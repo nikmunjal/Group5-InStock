@@ -12,9 +12,14 @@ function App() {
     return (
         <BrowserRouter>
             <Switch>
+
                 <Route path="/" exact component={WarehousePage} />
                 <Route path="/add" exact component={AddNewWareHouse} />
                 <Route path="/inventory/add" exact component={AddInventory} />
+                <Route path="/" exact component={WarehousePage} />                
+                <Route path="/add" exact component={AddNewWareHouse} />                 
+                <Route path="/inventory/add" exact component={AddInventory} />                
+
                 <Route path="/inventory/:id" component={InventoryDetailsPage} />
                 <Route path="/inventory" component={InventoryPage} />
                 <Route path="/:id" component={WarehouseDetail} />

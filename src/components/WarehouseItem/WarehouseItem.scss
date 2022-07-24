@@ -1,0 +1,87 @@
+@use '../../styles/partials/mixins' as *;
+
+.table-titles{
+    display:none;
+    list-style:none;
+    @include tablet{
+    display: flex;
+    @include h4-header($slate, left);
+    justify-content: space-between;
+    padding: 0 $tablet-padding-gutter;
+    background-color: rgba(247, 248, 249, 0.7);
+    }
+
+& .table-titles__item{
+    display: flex;
+    flex: 0 1 auto;
+    padding: $mobile-padding-gutter 0;
+}
+}
+
+.warehouse-item__card{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-top: 1px solid $cloud;
+    padding-left: $mobile-padding-after-header;
+    padding-top: $mobile-padding-before-header;
+    padding-bottom: $mobile-padding-after-header;
+
+
+
+    @include tablet{
+     justify-content: space-between;
+     padding: $mobile-padding-gutter $tablet-padding-gutter;
+     border-top: 0;
+     border-bottom: 1px solid $cloud;
+     flex-wrap: nowrap;
+
+    }
+
+
+     & ul{
+         list-style:none;
+         flex:50%;
+         padding-bottom: $mobile-padding-before-header;
+
+         @include tablet{
+
+
+
+         }
+     }
+
+     & .title{
+         @include h4-header($slate, left);
+         padding-bottom:$mobile-padding-after-label;
+         @include tablet{
+             display:none;
+         }
+
+
+
+     }
+ }
+ .address .contactName .contactInfo {
+    @include p2-body($instock-black, left)
+ }
+
+ .contactInfo{
+    display: flex;
+    flex-direction: column;
+ }
+
+ .grouping{
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+
+    @include tablet{
+        width: auto;
+
+
+    }
+
+
+
+ }
