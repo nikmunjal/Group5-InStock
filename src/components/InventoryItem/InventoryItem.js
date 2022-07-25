@@ -22,7 +22,9 @@ function InventoryItem(props){
   };
 
   function deleteItem() {
-    axios.delete(`http://localhost:8080/inventory/${props.id}`);
+    axios.delete(`http://localhost:8080/inventory/${props.id}`)
+    window.location.reload(false);
+    
     setOpen(false);
   };
 

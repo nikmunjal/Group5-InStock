@@ -6,20 +6,15 @@ import { Link } from "react-router-dom"
 import axios from 'axios';
 import InventoryItem from '../../components/InventoryItem/InventoryItem.js';
 import sort from "../../assets/Icons/sort-24px.svg"
-import InventoryDelete from '../../components/InventoryDelete/InventoryDelete';
-
 
 
 function InventoryPage() {
     const [inventory,setinventory] = useState([]);
     const [loading, setLoading] = useState(true);
-    
-
-
 
     useEffect(() => {
         const fetchData = async () => {
-         try {
+          try {
             const response = await axios.get(`${API_URL_Inventory}`);
 
             setinventory(response.data);
@@ -30,7 +25,7 @@ function InventoryPage() {
       };
 
       fetchData();
-    }, []);
+    },[]);
 
     if (loading) {
         return <div className="Loading">Loading Inventory...</div>;
@@ -65,7 +60,8 @@ function InventoryPage() {
             </ul>
 
           {inventory.map(item =>
-          <InventoryItem key={item.id}
+          <InventoryItem 
+          key={item.id}
           id = {item.id}
           name = {item.itemName}
           category = {item.category}

@@ -1,14 +1,15 @@
 import "./WarehouseItemCard.scss";
 import chevron from "../../assets/Icons/chevron_right-24px.svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import axios from "axios";
 
-function WarehouseItemCard({ item }) {
+
+function WarehouseItemCard({ item, deleteInvItem}) {
     const [open, setOpen] = useState(false);
 
-    function openDeleteModal() {
+        function openDeleteModal() {
             setOpen(true);
         };
     
@@ -19,7 +20,10 @@ function WarehouseItemCard({ item }) {
         function deleteItem() {
             axios.delete(`http://localhost:8080/inventory/${item.id}`);
             setOpen(false);
-    };
+            deleteInvItem(item.id);
+        };
+    
+        useEffect(() => console.log('mounted'), []);
 
   // conditional className based on status
     let statusClass = "item-card__value";
@@ -71,7 +75,7 @@ function WarehouseItemCard({ item }) {
                         Cancel
                     </button>
                     
-                    <button className="inventory__delete-button inventory__modal-button" onClick={deleteItem}>
+                    <button className="inventory__delete-button inventory__modal-button" onClick={deleteItem} >
                         Delete
                     </button>
                     </section>
