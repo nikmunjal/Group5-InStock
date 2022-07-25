@@ -2,7 +2,6 @@ import "./WarehouseItem.scss";
 import { useState } from "react";
 import delete__icon from "../../assets/Icons/delete_outline-24px.svg";
 import edit__icon from "../../assets/Icons/edit-24px.svg";
-import chevron from "../../assets/Icons/chevron_right-24px.svg";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import axios from "axios";

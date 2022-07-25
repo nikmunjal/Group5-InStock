@@ -1,19 +1,19 @@
 import './InventoryPage.scss';
 import Header from "../../components/Header";
-import Footer from "../../components/Footer";
 import { API_URL_Inventory } from '../../utilities/utility';
 import { useEffect, useState } from 'react';
 import { Link } from "react-router-dom"
 import axios from 'axios';
 import InventoryItem from '../../components/InventoryItem/InventoryItem.js';
 import sort from "../../assets/Icons/sort-24px.svg"
-
+import InventoryDelete from '../../components/InventoryDelete/InventoryDelete';
 
 
 
 function InventoryPage() {
     const [inventory,setinventory] = useState([]);
     const [loading, setLoading] = useState(true);
+    
 
 
 
@@ -82,7 +82,9 @@ function InventoryPage() {
 
 
 
-        <Footer />
+      
+
+        
 
         </>
 

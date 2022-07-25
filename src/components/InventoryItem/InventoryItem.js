@@ -3,13 +3,28 @@ import delete__icon from "../../assets/Icons/delete_outline-24px.svg";
 import edit__icon from "../../assets/Icons/edit-24px.svg";
 import chevron from "../../assets/Icons/chevron_right-24px.svg";
 import { Link } from 'react-router-dom';
-
-
+import Modal from 'react-modal';
+import { useState } from 'react';
+import axios from 'axios';
 
 
 
 function InventoryItem(props){
 
+  const [open, setOpen] = useState(false);
+
+  function openDeleteModal() {
+    setOpen(true);
+  };
+
+  function closeDeleteModal() {
+    setOpen(false);
+  };
+
+  function deleteItem() {
+    axios.delete(`http://localhost:8080/inventory/${props.id}`);
+    setOpen(false);
+  };
 
 
   return (
@@ -40,7 +55,32 @@ function InventoryItem(props){
             </ul>
             <ul className='action-list'>
               <li className='action-list__item'><p className="title">ACTIONS</p></li>
-              <li className='action-list__item'><img  className= "logo" alt = "delete icon" src = {delete__icon} /> <img  className= "logo" alt =  "edit icon" src = {edit__icon} /></li>
+              <li className='action-list__item'>
+                <img onClick={openDeleteModal} className= "logo" alt = "delete icon" src = {delete__icon} /> 
+                
+                <Modal isOpen={open} close={closeDeleteModal} className="modal">
+                  
+                    <h1 className="inventory__delete-header">
+                      Delete {props.name} inventory item?
+                    </h1>
+                    <p className="inventory__delete-desc">
+                      Please confirm that you'd like to delete {props.itemName} from the inventory list. You won't be able to undo this action.
+                    </p>
+                    <section className="inventory__delete-options">
+                      <button className="inventory__cancel-button inventory__modal-button" onClick={closeDeleteModal}>
+                          Cancel
+                      </button>
+                      
+                      <button className="inventory__delete-button inventory__modal-button" onClick={deleteItem}>
+                          Delete
+                      </button>
+                    </section>
+
+                </Modal>
+                <Link to={`/inventory/${props.id}`}>
+                  <img  className= "logo" alt =  "edit icon" src = {edit__icon} />
+                </Link>
+              </li>
             </ul>
             <ul className='placeholder-container'>
               <li className='placeholder-container__item'><p className="title">blank</p></li>
