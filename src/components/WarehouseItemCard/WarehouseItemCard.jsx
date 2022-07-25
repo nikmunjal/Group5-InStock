@@ -39,10 +39,10 @@ function WarehouseItemCard({ item }) {
         </div>
         </section>
         <section className="item-card__chg-cont">
-        <div className="item-card__delete"></div>
-        <Link to={`/inventory/edit/${item.id}`}>
-            <div className="item-card__edit"></div>
-        </Link>
+            <div className="item-card__delete"></div>
+            <Link to={`/inventory/edit/${item.id}`}>
+                <div className="item-card__edit"></div>
+            </Link>
         </section>
     </article>
     );
