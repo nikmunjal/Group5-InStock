@@ -1,69 +1,69 @@
-// .editwarehouse {
-//     margin: 0 5rem 0;
-//     border: 1px solid black;
-//     width: 30%;
-//     &__flex-wrapper {
-//         display: flex;
-//         justify-content: space-between;
-//         width: 56%;
-//         margin-left: 2rem;
-//     }
+.editwarehouse {
+    margin: 0 5rem 0;
+    border: 1px solid black;
+    width: 30%;
+    &__flex-wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 56%;
+        margin-left: 2rem;
+    }
 
-//     &__form-div {
-//         border-top: 1px solid black;
-//     }
+    &__form-div {
+        border-top: 1px solid black;
+    }
 
-//     &__form {
-//         margin-bottom: 3rem;
-//         padding-bottom: 1rem;
-//         width: 90%;
-//         margin-left: 2rem;
-//     }
+    &__form {
+        margin-bottom: 3rem;
+        padding-bottom: 1rem;
+        width: 90%;
+        margin-left: 2rem;
+    }
 
-//     &__form-container {
-//         display: flex;
-//         flex-flow: column;
-//     }
+    &__form-container {
+        display: flex;
+        flex-flow: column;
+    }
 
-//     &__form-container--border {
-//         border-top: 1px solid black;
-//         margin-top: 1rem;
-//         width: 100%;
-//     }
+    &__form-container--border {
+        border-top: 1px solid black;
+        margin-top: 1rem;
+        width: 100%;
+    }
 
-//     &__form-label {
-//         font-weight: 600;
-//     }
+    &__form-label {
+        font-weight: 600;
+    }
 
-//     &__form-input {
-//         border-radius: 20px;
-//         padding: 0.5rem;
-//         margin-bottom: 1rem;
-//     }
+    &__form-input {
+        border-radius: 20px;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+    }
 
-//     &__button-container {
-//         margin-top: 2rem;
-//         display: flex;
-//         flex-flow: row-reverse;
-//         justify-content: space-between;
-//     }
+    &__button-container {
+        margin-top: 2rem;
+        display: flex;
+        flex-flow: row-reverse;
+        justify-content: space-between;
+    }
 
-//     &__button-cancel {
-//         border-radius: 20px;
-//         padding: 0.5rem 3rem;
-//         background-color: white;
-//     }
+    &__button-cancel {
+        border-radius: 20px;
+        padding: 0.5rem 3rem;
+        background-color: white;
+    }
 
-//     &__button-cancel {
-//         border-radius: 20px;
-//         padding: 0.5rem 2.8rem;
-//     }
+    &__button-cancel {
+        border-radius: 20px;
+        padding: 0.5rem 2.8rem;
+    }
 
-//     &__button-add {
-//         border-radius: 20px;
-//         background-color: #2e66e6;
-//         color: white;
-//         padding: 0.5rem 1rem;
-//         border-color: #2e66e6;
-//     }
-// }
+    &__button-add {
+        border-radius: 20px;
+        background-color: #2e66e6;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-color: #2e66e6;
+    }
+}

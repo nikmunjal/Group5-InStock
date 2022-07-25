@@ -218,3 +218,29 @@
 
         }
     }
+
+@mixin instock {
+    @include p3-body($in-stock, center);
+    text-transform: uppercase;
+    background: rgba(21, 132, 99, 0.07);
+    border-radius: 1.25rem;
+    width: 3.5rem;
+
+    @include tablet {
+        font-size: 0.6875rem;
+        line-height: 1rem;
+    }
+}
+
+@mixin outstock {
+    @include p3-body($out-of-stock, center);
+    text-transform: uppercase;
+    background: rgba(201, 69, 21, 0.07);
+    border-radius: 1.25rem;
+    width: 4.5rem;
+
+    @include tablet {
+        font-size: 0.6875rem;
+        line-height: 1rem;
+    }
+}

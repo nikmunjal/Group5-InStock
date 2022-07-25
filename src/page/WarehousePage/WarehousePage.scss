@@ -1,4 +1,19 @@
 @import '../../components/Header.scss';
 @import '../../components/Footer.scss';
 
+.warehouse-page{
+    background-color: $white;
+    box-shadow: 0px 2px 5px;
+    border-radius: 3px;
+    padding: $mobile-padding-gutter;
 
+
+    @include tablet{
+        padding: $tablet-padding-gutter;
+    }
+
+    @include desktop{
+        padding-left: $desktop-padding-gutter;
+        padding-right: $desktop-padding-gutter;
+    }
+}
