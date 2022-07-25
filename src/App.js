@@ -16,6 +16,7 @@ function App() {
                 <Route path="/" exact component={WarehousePage} />
                 <Route path="/add" exact component={AddNewWareHouse} />
                 <Route path="/inventory/add" exact component={AddInventory} />
+
                 <Route path="/" exact component={WarehousePage} />
                 <Route path="/add" exact component={AddNewWareHouse} />
                 <Route
@@ -38,6 +39,12 @@ function App() {
                 <Route path="/:id" component={WarehouseDetail} />
                 <Route path="/:id" component={WarehouseDetail} />
                 <Route path="/edit/:id" component={EditWarehouse} />
+                <Route path="/inventory" exact component={InventoryPage} />
+                <Route path="/inventory/:id" exact component={InventoryDetailsPage} />
+                <Route path="/inventory/edit/:id" exact component={InventoryEdit} />
+                <Route path="/edit/:id" exact component={EditWarehouse} />
+                <Route path="/add" component={AddNewWareHouse} />
+                <Route path="/:id" component={WarehouseDetail} />
             </Switch>
         </BrowserRouter>
     );

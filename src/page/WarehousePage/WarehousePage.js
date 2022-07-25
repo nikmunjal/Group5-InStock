@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import WarehouseItem from '../../components/WarehouseItem/WarehouseItem';
 import Header from '../../components/Header';
-import Footer from '../../components/Footer'
-import sort from "../../assets/Icons/sort-24px.svg"
+import Footer from '../../components/Footer';
+import sort from "../../assets/Icons/sort-24px.svg";
 
 function WarehousePage() {
     const [warehouse, setwarehouse] = useState([]);

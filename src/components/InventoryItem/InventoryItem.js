@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Modal from 'react-modal';
 import { useState } from 'react';
 import axios from 'axios';
-
+import close from '../../assets/Icons/close-24px.svg';
 
 
 function InventoryItem(props){
@@ -22,7 +22,8 @@ function InventoryItem(props){
   };
 
   function deleteItem() {
-    axios.delete(`http://localhost:8080/inventory/${props.id}`);
+    axios.delete(`http://localhost:8080/inventory/${props.id}`)
+    props.deleteItem(props.id);
     setOpen(false);
   };
 
@@ -59,21 +60,30 @@ function InventoryItem(props){
                 <img onClick={openDeleteModal} className= "logo" alt = "delete icon" src = {delete__icon} /> 
                 
                 <Modal isOpen={open} close={closeDeleteModal} className="modal">
-                  
-                    <h1 className="inventory__delete-header">
-                      Delete {props.name} inventory item?
-                    </h1>
-                    <p className="inventory__delete-desc">
-                      Please confirm that you'd like to delete {props.itemName} from the inventory list. You won't be able to undo this action.
-                    </p>
-                    <section className="inventory__delete-options">
-                      <button className="inventory__cancel-button inventory__modal-button" onClick={closeDeleteModal}>
-                          Cancel
-                      </button>
-                      
-                      <button className="inventory__delete-button inventory__modal-button" onClick={deleteItem}>
-                          Delete
-                      </button>
+                    <section className="modal__body">
+                        <img className="inventory__modal-close" onClick={closeDeleteModal} src={close} alt="close icon"/>
+                      <section className="modal__body-text">
+                        <h1 className="inventory__delete-header">
+                          Delete {props.name} inventory item?
+                        </h1>
+                        <p className="inventory__delete-desc">
+                          Please confirm that you'd like to delete {props.itemName} from the inventory list. You won't be able to undo this action.
+                        </p>
+                      </section>
+                    
+                      <section className="inventory__delete-options">
+                          <section className="inventory__left-option">
+                            <button className="inventory__cancel-button inventory__modal-button" onClick={closeDeleteModal}>
+                                Cancel
+                            </button>
+                          </section>
+                          
+                          <section className="inventory__right-option">
+                            <button className="inventory__delete-button inventory__modal-button" onClick={deleteItem}>
+                                Delete
+                            </button>
+                          </section>
+                      </section>
                     </section>
 
                 </Modal>
