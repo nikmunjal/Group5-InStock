@@ -1,6 +1,117 @@
 @import '../../styles/partials/mixins';
 @import '../../styles/partials/variables';
+@import '../../components/Header.scss';
+@import '../../components/Footer.scss';
+
+.inventory__edit {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem;
+
+    @include tablet {
+        padding: 1rem 2rem;
+    }
+
+    @include desktop {
+        padding: 1rem 5rem;
+    }
+};
+
+.inventory__edit-top {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid $cloud;
+}
 
 .inventory__edit-header {
     @include h1-header($instock-black, start)
+};
+
+
+//      FORM
+.inventory__form {
+    @include tablet {
+        display: flex;
+    }
+}
+
+.inventory__details-form {
+    @include tablet {
+        display:flex;
+        flex-direction: column;
+        padding-right: 2rem;
+        border-right: 2px solid $cloud;
+    }
+}
+
+.inventory__availability-form {
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        padding-left: 2rem;
+    }
+}
+
+.inventory__form-header {
+    @include h2-subheader($instock-black, start);
+    padding: 1rem 0;
+}
+
+.inventory__form-label {
+    @include h3-labels-links-buttons($instock-black, start);
+    margin-top: 1rem;
+}
+
+.inventory__form-section {
+    padding-top: 1rem;
+
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.inventory__item-field {
+    @include form-field
+}
+
+.inventory__item-field:active {
+    @include form-field-active
+}
+
+//      BUTTONS
+.inventory__edit-buttons {
+    display: flex;
+    padding: 1rem 0;
+}
+
+.edit__form-button {
+    @include h3-labels-links-buttons($slate, center);
+    background-color: $white;
+    border-color: $cloud;
+    height: 2.25rem;
+    border-radius: 20px;
+    width: 90%;
+}
+
+.status__options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 1rem;
+
+    @include tablet {
+        justify-content:flex-start;
+    }
+}
+
+.status__instock, .status__outstock {
+    padding-left: 0.5rem;
+}
+
+.save__button {
+    background-color: $instock-indigo;
+    color: $white;
+    border-color: $instock-indigo;
 }
