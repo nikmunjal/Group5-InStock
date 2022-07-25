@@ -20,10 +20,11 @@ function App() {
                 <Route path="/inventory" exact component={InventoryPage} />
                 <Route path="/inventory/:id" exact component={InventoryDetailsPage} />
                 <Route path="/inventory/edit/:id" exact component={InventoryEdit} />
+                <Route path="/edit/:id" exact component={EditWarehouse} />
                 <Route path="/add" component={AddNewWareHouse} />
                 <Route path="/:id" component={WarehouseDetail} />
                 {/* <Route path="/delete" component={DeleteWareHouse} /> */}
-                <Route path="/edit/:id" component={EditWarehouse} />
+                
             </Switch>
         </BrowserRouter>
     );
