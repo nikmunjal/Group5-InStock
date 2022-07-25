@@ -1,6 +1,5 @@
 import './InventoryDetail.scss';
 import back__icon from "../../assets/Icons/arrow_back-24px.svg";
-import edit__icon from "../../assets/Icons/edit-24px.svg";
 import { Link } from 'react-router-dom';
 
 function InventoryDetail(props){
