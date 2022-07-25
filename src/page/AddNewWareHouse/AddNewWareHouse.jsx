@@ -5,6 +5,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { API_URL_Warehouse } from "../../utilities/utility";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
 const AddNewWareHouse = (props) => {
     const [wareHouseData, setWarehouseData] = useState({
@@ -148,173 +150,186 @@ const AddNewWareHouse = (props) => {
     };
 
     return (
-        <div className="addnewwarehouse">
-            <div className="addnewwarehouse__flex-wrapper">
-                <Link to="/">
-                    <img src={backArrow} alt="back arrow" />
-                </Link>
-                <h1>Add New Warehouse</h1>
-            </div>
-            <div className="addnewwarehouse__form-div">
-                <form className="addnewwarehouse__form" onSubmit={handleSubmit}>
-                    <div className="addnewwarehouse__form-flex">
-                        <div className="addnewwarehouse__form-container">
-                            <h3 className="addnewwarehouse__form-title">
-                                Warehouse Details
-                            </h3>
-                            <label className="addnewwarehouse__form-label">
-                                Warehouse Name
-                            </label>
-                            <input
-                                className="addnewwarehouse__form-input"
-                                placeholder="Warehouse Name"
-                                name="name"
-                                value={wareHouseData.name}
-                                onChange={handleNameInputChange}
-                            />
-                            {submitted && !wareHouseData.name ? (
-                                <div>
-                                    <img src={error} alt="error" />
-                                    <span>This field is required</span>
-                                </div>
-                            ) : null}
-                            <label className="addnewwarehouse__form-label">
-                                Street Address
-                            </label>
-                            <input
-                                className="addnewwarehouse__form-input"
-                                placeholder="Street Address"
-                                name="address"
-                                value={wareHouseData.address}
-                                onChange={handleAddressInputChange}
-                            />
-                            {submitted && !wareHouseData.address ? (
-                                <div>
-                                    <img src={error} alt="error" />
-                                    <span>This field is required</span>
-                                </div>
-                            ) : null}
-                            <label className="addnewwarehouse__form-label">
-                                City
-                            </label>
-                            <input
-                                className="addnewwarehouse__form-input"
-                                placeholder="City"
-                                name="city"
-                                value={wareHouseData.city}
-                                onChange={handleCityInputChange}
-                            />
-                            {submitted && !wareHouseData.city ? (
-                                <div>
-                                    <img src={error} alt="error" />
-                                    <span>This field is required</span>
-                                </div>
-                            ) : null}
-                            <label className="addnewwarehouse__form-label">
-                                Country
-                            </label>
-                            <input
-                                className="addnewwarehouse__form-input"
-                                placeholder="Country"
-                                name="country"
-                                value={wareHouseData.country}
-                                onChange={handleCountryInputChange}
-                            />
-                            {submitted && !wareHouseData.country ? (
-                                <div>
-                                    <img src={error} alt="error" />
-                                    <span>This field is required</span>
-                                </div>
-                            ) : null}
+        <>
+            <Header />
+            <div className="addnewwarehouse">
+                <div className="addnewwarehouse__flex-wrapper">
+                    <Link to="/">
+                        <img
+                            className="addnewwarehouse__backarrow"
+                            src={backArrow}
+                            alt="back arrow"
+                        />
+                    </Link>
+                    <h1 className="addnewwarehouse__header">
+                        Add New Warehouse
+                    </h1>
+                </div>
+                <div className="addnewwarehouse__form-div">
+                    <form
+                        className="addnewwarehouse__form"
+                        onSubmit={handleSubmit}
+                    >
+                        <div className="addnewwarehouse__form-flex">
+                            <div className="addnewwarehouse__form-container">
+                                <h3 className="addnewwarehouse__form-title">
+                                    Warehouse Details
+                                </h3>
+                                <label className="addnewwarehouse__form-label">
+                                    Warehouse Name
+                                </label>
+                                <input
+                                    className="addnewwarehouse__form-input"
+                                    placeholder="Warehouse Name"
+                                    name="name"
+                                    value={wareHouseData.name}
+                                    onChange={handleNameInputChange}
+                                />
+                                {submitted && !wareHouseData.name ? (
+                                    <div>
+                                        <img src={error} alt="error" />
+                                        <span>This field is required</span>
+                                    </div>
+                                ) : null}
+                                <label className="addnewwarehouse__form-label">
+                                    Street Address
+                                </label>
+                                <input
+                                    className="addnewwarehouse__form-input"
+                                    placeholder="Street Address"
+                                    name="address"
+                                    value={wareHouseData.address}
+                                    onChange={handleAddressInputChange}
+                                />
+                                {submitted && !wareHouseData.address ? (
+                                    <div>
+                                        <img src={error} alt="error" />
+                                        <span>This field is required</span>
+                                    </div>
+                                ) : null}
+                                <label className="addnewwarehouse__form-label">
+                                    City
+                                </label>
+                                <input
+                                    className="addnewwarehouse__form-input"
+                                    placeholder="City"
+                                    name="city"
+                                    value={wareHouseData.city}
+                                    onChange={handleCityInputChange}
+                                />
+                                {submitted && !wareHouseData.city ? (
+                                    <div>
+                                        <img src={error} alt="error" />
+                                        <span>This field is required</span>
+                                    </div>
+                                ) : null}
+                                <label className="addnewwarehouse__form-label">
+                                    Country
+                                </label>
+                                <input
+                                    className="addnewwarehouse__form-input"
+                                    placeholder="Country"
+                                    name="country"
+                                    value={wareHouseData.country}
+                                    onChange={handleCountryInputChange}
+                                />
+                                {submitted && !wareHouseData.country ? (
+                                    <div>
+                                        <img src={error} alt="error" />
+                                        <span>This field is required</span>
+                                    </div>
+                                ) : null}
+                            </div>
+                            <div className="addnewwarehouse__form-container addnewwarehouse__form-container--border">
+                                <h3 className="addnewwarehouse__form-title">
+                                    Contact Details
+                                </h3>
+                                <label className="addnewwarehouse__form-label">
+                                    Contact Name
+                                </label>
+                                <input
+                                    className="addnewwarehouse__form-input"
+                                    placeholder="Contact Name"
+                                    name="contactName"
+                                    value={wareHouseData.contactName}
+                                    onChange={handleContactNameInputChange}
+                                />
+                                {submitted && !wareHouseData.contactName ? (
+                                    <div>
+                                        <img src={error} alt="error" />
+                                        <span>This field is required</span>
+                                    </div>
+                                ) : null}
+                                <label className="addnewwarehouse__form-label">
+                                    Position
+                                </label>
+                                <input
+                                    className="addnewwarehouse__form-input"
+                                    placeholder="Position"
+                                    name="position"
+                                    value={wareHouseData.position}
+                                    onChange={handlePositionInputChange}
+                                />
+                                {submitted && !wareHouseData.position ? (
+                                    <div>
+                                        <img src={error} alt="error" />
+                                        <span>This field is required</span>
+                                    </div>
+                                ) : null}
+                                <label className="addnewwarehouse__form-label">
+                                    Phone Number
+                                </label>
+                                <input
+                                    className="addnewwarehouse__form-input"
+                                    placeholder="Phone Number"
+                                    name="phone"
+                                    value={wareHouseData.phone}
+                                    onChange={handlePhoneInputChange}
+                                />
+                                {submitted &&
+                                !wareHouseData.phone &&
+                                !phoneError ? (
+                                    <div>
+                                        <img src={error} alt="error" />
+                                        <span>This field is required</span>
+                                    </div>
+                                ) : null}
+                                <label className="addnewwarehouse__form-label">
+                                    Email
+                                </label>
+                                <input
+                                    className="addnewwarehouse__form-input"
+                                    placeholder="Email"
+                                    name="email"
+                                    value={wareHouseData.email}
+                                    onChange={handleEmailInputChange}
+                                />
+                                {submitted &&
+                                !wareHouseData.email &&
+                                !emailError ? (
+                                    <div>
+                                        <img src={error} alt="error" />
+                                        <span>This field is required</span>
+                                    </div>
+                                ) : null}
+                            </div>
                         </div>
-                        <div className="addnewwarehouse__form-container addnewwarehouse__form-container--border">
-                            <h3 className="addnewwarehouse__form-title">
-                                Contact Details
-                            </h3>
-                            <label className="addnewwarehouse__form-label">
-                                Contact Name
-                            </label>
-                            <input
-                                className="addnewwarehouse__form-input"
-                                placeholder="Contact Name"
-                                name="contactName"
-                                value={wareHouseData.contactName}
-                                onChange={handleContactNameInputChange}
-                            />
-                            {submitted && !wareHouseData.contactName ? (
-                                <div>
-                                    <img src={error} alt="error" />
-                                    <span>This field is required</span>
-                                </div>
-                            ) : null}
-                            <label className="addnewwarehouse__form-label">
-                                Position
-                            </label>
-                            <input
-                                className="addnewwarehouse__form-input"
-                                placeholder="Position"
-                                name="position"
-                                value={wareHouseData.position}
-                                onChange={handlePositionInputChange}
-                            />
-                            {submitted && !wareHouseData.position ? (
-                                <div>
-                                    <img src={error} alt="error" />
-                                    <span>This field is required</span>
-                                </div>
-                            ) : null}
-                            <label className="addnewwarehouse__form-label">
-                                Phone Number
-                            </label>
-                            <input
-                                className="addnewwarehouse__form-input"
-                                placeholder="Phone Number"
-                                name="phone"
-                                value={wareHouseData.phone}
-                                onChange={handlePhoneInputChange}
-                            />
-                            {submitted &&
-                            !wareHouseData.phone &&
-                            !phoneError ? (
-                                <div>
-                                    <img src={error} alt="error" />
-                                    <span>This field is required</span>
-                                </div>
-                            ) : null}
-                            <label className="addnewwarehouse__form-label">
-                                Email
-                            </label>
-                            <input
-                                className="addnewwarehouse__form-input"
-                                placeholder="Email"
-                                name="email"
-                                value={wareHouseData.email}
-                                onChange={handleEmailInputChange}
-                            />
-                            {submitted &&
-                            !wareHouseData.email &&
-                            !emailError ? (
-                                <div>
-                                    <img src={error} alt="error" />
-                                    <span>This field is required</span>
-                                </div>
-                            ) : null}
+                        <div className="addnewwarehouse__button-container">
+                            <button className="addnewwarehouse__button-add">
+                                + Add Warehouse
+                            </button>
+                            <button
+                                className="addnewwarehouse__button-cancel"
+                                onClick={handleClick}
+                            >
+                                Cancel
+                            </button>
                         </div>
-                    </div>
-                    <div className="addnewwarehouse__button-container">
-                        <button className="addnewwarehouse__button-add">
-                            + Add Warehouse
-                        </button>
-                        <button
-                            className="addnewwarehouse__button-cancel"
-                            onClick={handleClick}
-                        >
-                            Cancel
-                        </button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
+            <Footer />
+        </>
     );
 };
 export default AddNewWareHouse;

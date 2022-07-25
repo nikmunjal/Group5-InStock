@@ -185,7 +185,11 @@ const EditWarehouse = (props) => {
         <div className="editwarehouse">
             <div className="editwarehouse__flex-wrapper">
                 <Link to="/">
-                    <img src={backArrow} alt="back arrow" />
+                    <img
+                        className="editwarehouse__backarrow"
+                        src={backArrow}
+                        alt="back arrow"
+                    />
                 </Link>
                 <h1>Edit Warehouse</h1>
             </div>
