@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import axios from "axios";
+import close from '../../assets/Icons/close-24px.svg';
 
 
 function WarehouseItemCard({ item, deleteInvItem}) {
@@ -63,21 +64,30 @@ function WarehouseItemCard({ item, deleteInvItem}) {
         <section className="item-card__chg-cont">
             <div onClick={openDeleteModal} className="item-card__delete"></div>
             <Modal isOpen={open} close={closeDeleteModal} className="modal">
+                    <section className="modal__body">
+                        <img className="inventory__modal-close" onClick={closeDeleteModal} src={close} alt="close icon"/>
+                        <section className="modal__body-text">
+                        <h1 className="inventory__delete-header">
+                            Delete {item.name} inventory item?
+                        </h1>
+                        <p className="inventory__delete-desc">
+                            Please confirm that you'd like to delete {item.itemName} from the inventory list. You won't be able to undo this action.
+                        </p>
+                        </section>
                     
-                    <h1 className="inventory__delete-header">
-                    Delete {item.name} inventory item?
-                    </h1>
-                    <p className="inventory__delete-desc">
-                    Please confirm that you'd like to delete {item.itemName} from the inventory list. You won't be able to undo this action.
-                    </p>
-                    <section className="inventory__delete-options">
-                    <button className="inventory__cancel-button inventory__modal-button" onClick={closeDeleteModal}>
-                        Cancel
-                    </button>
-                    
-                    <button className="inventory__delete-button inventory__modal-button" onClick={deleteItem} >
-                        Delete
-                    </button>
+                        <section className="inventory__delete-options">
+                            <section className="inventory__left-option">
+                            <button className="inventory__cancel-button inventory__modal-button" onClick={closeDeleteModal}>
+                                Cancel
+                            </button>
+                            </section>
+                            
+                            <section className="inventory__right-option">
+                            <button className="inventory__delete-button inventory__modal-button" onClick={deleteItem}>
+                                Delete
+                            </button>
+                            </section>
+                        </section>
                     </section>
 
                 </Modal>

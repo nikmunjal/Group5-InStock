@@ -13,11 +13,15 @@ return (
         <div className='inventory-detail__card'>
 
             <div className='detail-header'>
-            <div className='title__container'> <img  className= "logo" alt =  "back icon" src = {back__icon} /> <h1 className='detail-header__title'>{props.details.itemName}</h1> </div>
-              <Link className='detail-header__edit' to={`/inventory/edit/${props.details.id}`}>
+            <div className='title__container'> 
+            <Link to="/inventory">
+                <img  className= "logo" alt =  "back icon" src = {back__icon} /> 
+            </Link>
+            <h1 className='detail-header__title'>{props.details.itemName}</h1> </div>
+                <Link className='detail-header__edit' to={`/inventory/edit/${props.details.id}`}>
                         <img className="detail-header__edit--icon" src={edit__icon} alt="edit icon" />
                         <p className="detail-header__edit--text">Edit</p>
-              </Link>
+                </Link>
             </div>
             <div className='details__card'>
             <div>

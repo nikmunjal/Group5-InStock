@@ -6,11 +6,8 @@ import { Link } from "react-router-dom"
 import axios from 'axios';
 import InventoryItem from '../../components/InventoryItem/InventoryItem.js';
 import sort from "../../assets/Icons/sort-24px.svg"
-<<<<<<< HEAD
-=======
 
 
->>>>>>> d2e6e74fe49ea60126a6c78efae75abe82cb8119
 
 
 function InventoryPage() {
