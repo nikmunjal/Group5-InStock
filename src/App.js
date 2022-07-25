@@ -7,12 +7,15 @@ import AddInventory from "./page/AddInventory/AddInventory";
 import WarehouseDetail from "./components/WarehouseDetail/WarehouseDetail";
 import AddNewWareHouse from "./page/AddNewWareHouse/AddNewWareHouse";
 import EditWarehouse from "./page/EditWarehouse/EditWarehouse";
-// import DeleteWarehouse from "./components/DeleteWarehouse/DeleteWarehouse";
 
 function App() {
     return (
         <BrowserRouter>
             <Switch>
+
+                <Route path="/" exact component={WarehousePage} />
+                <Route path="/add" exact component={AddNewWareHouse} />
+                <Route path="/inventory/add" exact component={AddInventory} />
                 <Route path="/" exact component={WarehousePage} />                
                 <Route path="/add" exact component={AddNewWareHouse} />                 
                 <Route path="/inventory/add" exact component={AddInventory} />                
@@ -20,9 +23,6 @@ function App() {
                 <Route path="/inventory" exact component={InventoryPage} />
                 <Route path="/:id" component={WarehouseDetail} />
                 <Route path="/edit/:id" component={EditWarehouse} />
-                
-                {/* <Route path="/delete" component={DeleteWarehouse} /> */}
-                
             </Switch>
         </BrowserRouter>
     );
