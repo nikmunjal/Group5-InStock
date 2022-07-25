@@ -1,0 +1,44 @@
+@import '../../styles/partials/mixins';
+@import '../../styles/partials/variables';
+
+
+.inventory__delete {
+    display: flex;
+    flex-direction: column;
+};
+
+.close__icon {
+    position: fixed;
+    right: 0;
+};
+
+.inventory__delete-header {
+    @include h1-header($instock-black, start);
+};
+
+.inventory__delete-desc {
+    @include p1-body($instock-black, start);
+};
+
+.inventory__delete-options {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    @include tablet {
+        margin-left: auto;
+    }
+};
+
+.inventory__cancel-button, .inventory__delete-button {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+    @include tablet {
+    width: 100%
+    }
+};
+

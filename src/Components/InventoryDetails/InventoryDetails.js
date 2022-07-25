@@ -1,6 +1,7 @@
 import './InventoryDetail.scss';
 import back__icon from "../../assets/Icons/arrow_back-24px.svg";
 import edit__icon from "../../assets/Icons/edit-24px.svg";
+import { Link } from 'react-router-dom';
 
 function InventoryDetail(props){
 
@@ -13,7 +14,9 @@ return (
 
             <div className='detail-header'>
             <div className='title__container'> <img  className= "logo" alt =  "back icon" src = {back__icon} /> <h1 className='detail-header__title'>{props.details.itemName}</h1> </div>
-            <button className='detail-header__button' type = "button">EDIT ITEM</button>
+              <Link to={`/inventory/edit/${props.details.id}`}>
+                <button className='detail-header__button' type = "button">EDIT ITEM</button>
+              </Link>
             </div>
             <div className='details__card'>
             <div>
