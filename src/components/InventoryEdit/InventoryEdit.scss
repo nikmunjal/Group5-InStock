@@ -3,10 +3,19 @@
 @import '../../components/Header.scss';
 @import '../../components/Footer.scss';
 
+.inventory__edit-container {
+    display: flex;
+    justify-content: center;
+}
+
 .inventory__edit {
     display: flex;
     flex-direction: column;
     padding: 1rem 1rem;
+    border: 2px solid $cloud;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px $cloud;
+    width:90%;
 
     @include tablet {
         padding: 1rem 2rem;
@@ -22,6 +31,10 @@
     flex-direction: row;
     padding-bottom: 1rem;
     border-bottom: 2px solid $cloud;
+
+    @include tablet {
+        margin-bottom: 1rem
+    }
 }
 
 .inventory__edit-header {
@@ -30,7 +43,7 @@
 
 
 //      FORM
-.inventory__form {
+.inventory__form-body {
     @include tablet {
         display: flex;
     }
@@ -42,6 +55,7 @@
         flex-direction: column;
         padding-right: 2rem;
         border-right: 2px solid $cloud;
+        width: 50%
     }
 }
 
@@ -50,6 +64,7 @@
         display: flex;
         flex-direction: column;
         padding-left: 2rem;
+        width: 50%
     }
 }
 
@@ -84,6 +99,10 @@
 .inventory__edit-buttons {
     display: flex;
     padding: 1rem 0;
+
+    @include tablet {
+        justify-content: flex-end;
+    }
 }
 
 .edit__form-button {
@@ -92,22 +111,30 @@
     border-color: $cloud;
     height: 2.25rem;
     border-radius: 20px;
-    width: 90%;
+    width: 70%;
+
+    @include tablet {
+        padding: 0 16px;
+        width: fit-content;
+    }
 }
 
 .status__options {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    padding-right: 1rem;
 
     @include tablet {
         justify-content:flex-start;
+        
     }
 }
 
 .status__instock, .status__outstock {
     padding-left: 0.5rem;
+}
+
+.status__right {
+    padding-left: 2rem;
 }
 
 .save__button {

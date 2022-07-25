@@ -60,7 +60,7 @@ function InventoryItem(props){
                 
                 <Modal isOpen={open} close={closeDeleteModal} className="modal">
                     <section className="modal__body">
-                      <img className="inventory__modal-close" src={close} alt="close icon"/>
+                        <img className="inventory__modal-close" onClick={closeDeleteModal} src={close} alt="close icon"/>
                       <section className="modal__body-text">
                         <h1 className="inventory__delete-header">
                           Delete {props.name} inventory item?
