@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 import axios from 'axios';
 import InventoryItem from '../../components/InventoryItem/InventoryItem.js';
 import sort from "../../assets/Icons/sort-24px.svg"
-import InventoryDelete from '../../components/InventoryDelete/InventoryDelete';
+
 
 
 
