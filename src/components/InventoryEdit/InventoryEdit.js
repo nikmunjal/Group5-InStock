@@ -4,6 +4,9 @@ import { useState } from 'react';
 import { API_URL_Inventory } from '../../utilities/utility';
 import { useParams } from 'react-router-dom';
 import error from '../../assets/Icons/error-24px.svg';
+import Header from '../Header';
+import Footer from '../Footer';
+import { Link } from 'react-router-dom';
 
 function InventoryEdit(props) {
 
@@ -134,151 +137,176 @@ function InventoryEdit(props) {
     };
 
     const clickFunc = (e) => {
-        props.history.push("/");
+        props.history.push("/inventory");
     };
 
 
     return (
-        <div className="inventory__edit">
-        
-            <img className="back__arrow" src={arrowBack} alt="back arrow"/>
-
-            <h1 className="inventory__edit-header">
-                Edit Inventory Item
-            </h1>
-
-            <form className="inventory__form" onSubmit={handleSubmit}>
-                <section className="inventory__details-form">
-
-                    <label htmlFor="addName" className="inventory__form-label">
-                        Item Name
-                    </label>
-                    <input
-                        className="inventory__item-name"
-                        id="addName"
-                        type="text"
-                        placeholder=""
-                        value={itemData.itemName}
-                        onChange={itemNameChange}
-                    />
-                    {saved && !itemData.itemName ? (
-                                <div>
-                                    <img src={error} alt="error" />
-                                    <span>This field is required</span>
-                                </div>
-                    ) : null}
-
-                    <label htmlFor="addDesc" className="inventory__form-label">
-                        Description
-                    </label>
-                    <input
-                        className="inventory__description"
-                        id="addDesc"
-                        type="text"
-                        placeholder=""
-                        value={itemData.description}
-                        onChange={descChange}
-                    />
-                    {saved && !itemData.description ? (
-                                <div>
-                                    <img src={error} alt="error" />
-                                    <span>This field is required</span>
-                                </div>
-                    ) : null}
-
-                    <label htmlFor="addCategory" className="inventory__form-label">
-                        Category
-                    </label>
-                    <input
-                        className="inventory__category"
-                        id="addCategory"
-                        type="text"
-                        placeholder=""
-                        value={itemData.category}
-                        onChange={categoryChange}
-                    />
-                    {saved && !itemData.category ? (
-                                <div>
-                                    <img src={error} alt="error" />
-                                    <span>This field is required</span>
-                                </div>
-                    ) : null}
-
-                </section>
-
-                <section className="inventory__availability-form">
-
-                    <label htmlFor="addStatus" className="inventory__form-label">
-                        Status
-                    </label>
-                    <section id="addStatus">
-                        <label htmlFor="inStock" className='status__instock'>
-                            In stock
-                        </label>
-                        <input
-                            className="inventory__status"
-                            name="status"
-                            type="radio"
-                            value="In stock"
-                            onChange={statusChange}
-                            id="inStock"
-                            defaultChecked="checked"
-                        />
-                        <label htmlFor="outStock" className='status__outstock'>
-                            Out of stock
-                        </label>
-                        <input
-                            className="inventory__status"
-                            name="status"
-                            type="radio"
-                            value="Out of stock"
-                            onChange={statusChange}
-                            id="outStock"
-                        />
-                        {saved && !itemData.status ? (
-                                <div>
-                                    <img src={error} alt="error" />
-                                    <span>This field is required</span>
-                                </div>
-                    ) : null}
+        <>
+            <Header 
+                warehouseLink={""}
+                inventoryLink={"inventory__link-active"}
+            />
+            <div className="inventory__edit-container">
+                <div className="inventory__edit">
+                    <section className="inventory__edit-top">
+                        <Link to="/inventory/">
+                            <img className="back__arrow" src={arrowBack} alt="back arrow"/>
+                        </Link>
+                        <h1 className="inventory__edit-header">
+                            Edit Inventory Item
+                        </h1>
                     </section>
+                    <form className="inventory__form" onSubmit={handleSubmit}>
+                        <section className="inventory__form-body">
+                            <section className="inventory__details-form">
+                                <h1 className="inventory__form-header">
+                                    Item Details
+                                </h1>
+                                <section className="inventory__form-section">
+                                    <label htmlFor="addName" className="inventory__form-label">
+                                        Item Name
+                                    </label>
+                                    <input
+                                        className="inventory__item-name inventory__item-field"
+                                        id="addName"
+                                        type="text"
+                                        placeholder=""
+                                        value={itemData.itemName}
+                                        onChange={itemNameChange}
+                                    />
+                                    {saved && !itemData.itemName ? (
+                                                <div>
+                                                    <img src={error} alt="error" />
+                                                    <span>This field is required</span>
+                                                </div>
+                                    ) : null}
+                                </section>
+                                <section className="inventory__form-section">
+                                    <label htmlFor="addDesc" className="inventory__form-label">
+                                        Description
+                                    </label>
+                                    <input
+                                        className="inventory__description inventory__item-field"
+                                        id="addDesc"
+                                        type="text"
+                                        placeholder=""
+                                        value={itemData.description}
+                                        onChange={descChange}
+                                    />
+                                    {saved && !itemData.description ? (
+                                                <div>
+                                                    <img src={error} alt="error" />
+                                                    <span>This field is required</span>
+                                                </div>
+                                    ) : null}
+                                </section>
+                                <section className="inventory__form-section">
+                                    <label htmlFor="addCategory" className="inventory__form-label">
+                                        Category
+                                    </label>
+                                    <input
+                                        className="inventory__category inventory__item-field"
+                                        id="addCategory"
+                                        type="text"
+                                        placeholder=""
+                                        value={itemData.category}
+                                        onChange={categoryChange}
+                                    />
+                                    {saved && !itemData.category ? (
+                                                <div>
+                                                    <img src={error} alt="error" />
+                                                    <span>This field is required</span>
+                                                </div>
+                                    ) : null}
+                                </section>
+                            </section>
 
-                    <label htmlFor="addWarehouse" className="inventory__form-label">
-                        Warehouse
-                    </label>
-                    <input
-                        className="inventory__warehouse"
-                        id="addWarehouse"
-                        type="text"
-                        placeholder=""
-                        value={itemData.warehouseName}
-                        onChange={warehouseNameChange}
-                    />
-                    {saved && !itemData.warehouseName ? (
-                                <div>
-                                    <img src={error} alt="error" />
-                                    <span>This field is required</span>
-                                </div>
-                    ) : null}
+                            <section className="inventory__availability-form">
+                                <h1 className="inventory__form-header">
+                                    Item Availability
+                                </h1>
 
-                </section>
+                                <label htmlFor="addStatus" className="inventory__form-label">
+                                    Status
+                                </label>
+                                <section id="addStatus" className="status__options">
+                                    <section className="status__left">
+                                        <input
+                                            className="inventory__status"
+                                            name="status"
+                                            type="radio"
+                                            value="In stock"
+                                            onChange={statusChange}
+                                            id="inStock"
+                                            defaultChecked="checked"
+                                        />
+                                        <label htmlFor="inStock" className='status__instock'>
+                                            In stock
+                                        </label>
+                                    </section>
+                                    <section className="status__right">
+                                        <input
+                                            className="inventory__status"
+                                            name="status"
+                                            type="radio"
+                                            value="Out of stock"
+                                            onChange={statusChange}
+                                            id="outStock"
+                                        />
+                                        <label htmlFor="outStock" className='status__outstock'>
+                                            Out of stock
+                                        </label>
+                                    </section>
+                                    {saved && !itemData.status ? (
+                                            <div>
+                                                <img src={error} alt="error" />
+                                                <span>This field is required</span>
+                                            </div>
+                                ) : null}
+                                </section>
+                                <section className="inventory__form-section">
+                                    <label htmlFor="addWarehouse" className="inventory__form-label">
+                                        Warehouse
+                                    </label>
+                                    <input
+                                        className="inventory__warehouse inventory__item-field"
+                                        id="addWarehouse"
+                                        type="text"
+                                        placeholder=""
+                                        value={itemData.warehouseName}
+                                        onChange={warehouseNameChange}
+                                    />
+                                    {saved && !itemData.warehouseName ? (
+                                                <div>
+                                                    <img src={error} alt="error" />
+                                                    <span>This field is required</span>
+                                                </div>
+                                    ) : null}
+                                </section>
+                            </section>
+                        </section>
 
 
-                <section className="inventory__edit-buttons">
-                    
-                    <button className="cancel__button" onClick={clickFunc}>
-                        Cancel
-                    </button>
-                    <button className="save__button">
-                        Save
-                    </button>
+                        <section className="inventory__edit-buttons">
+                            
+                            <button className="cancel__button edit__form-button" onClick={clickFunc}>
+                                Cancel
+                            </button>
+                            
+                            <button className="save__button edit__form-button">
+                                Save
+                            </button>
 
-                </section>
+                        </section>
 
 
-            </form>
-        
-        </div>
+                    </form>
+                
+                </div>
+            </div>
+            <Footer />
+        </>
     )
 }
 

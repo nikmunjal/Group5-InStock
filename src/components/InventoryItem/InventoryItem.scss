@@ -124,19 +124,102 @@ p.Out{
 
 //      MODAL STYLING
 .modal {
-  position: fixed; 
-  padding: 4rem 1rem;
-  left: 0; 
-  top: 0;
-  width: 100%;
-  height: 100%; 
-  background-color: $white
+
+  @include tablet {
+    display: flex;
+    justify-content: center
+  }
 };
+
+.modal__body {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem;
+    position: fixed;
+    width: 100%;
+    height: 100%; 
+    background-color: $white;
+    border-color: $white;
+
+    @include tablet {
+        padding: 1rem 1rem;
+        width: 80%;
+        height: 30%;
+        top: 170px;
+    }
+}
+
+.inventory__modal-close {
+    align-self: flex-end;
+    position: fixed;
+    padding-right: 0.5rem;
+}
+
+.modal__body-text {
+    padding-top: 4rem;
+
+    @include tablet {
+        padding: 2rem 4rem 0 ;
+    }
+}
+
 
 .inventory__delete-desc {
     padding: 1rem 0;
-}
+};
+
+.inventory__delete-options {
+    display: flex;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+
+    @include tablet {
+        margin-left: auto;
+        position: relative;
+        padding-bottom: 0;
+        padding-right: 4rem;
+    }
+};
 
 .inventory__modal-button {
-    @include h3-labels-links-buttons($cloud, center);
+    @include h3-labels-links-buttons($slate, center);
+    background-color: $white;
+    border-color: $cloud;
+    height: 2.25rem;
+    border-radius: 20px;
+    width: 90%;
+
+    @include tablet {
+        padding: 0 16px;
+        width: fit-content;
+    }
+};
+
+.inventory__delete-button {
+    background-color: $out-of-stock;
+    color: $white;
+    border-color: $out-of-stock;
+};
+
+
+.inventory__left-option {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+    @include tablet {
+        width: 100%;
+        justify-content: end;
+    }
+}
+
+.inventory__right-option {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+    @include tablet {
+        width: 100%;
+        justify-content: end;
+    }
 }
