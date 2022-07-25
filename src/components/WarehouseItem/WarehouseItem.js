@@ -23,7 +23,7 @@ function WarehouseItem(props) {
         setIsOpen(false);
     }
 
-    //To remove warehouse
+    //To remove a warehouse
     const removeWarehouse = () => {
         axios({
             url: `${API_URL_Warehouse}/${props.id}`,
