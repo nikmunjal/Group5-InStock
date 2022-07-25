@@ -14,6 +14,13 @@ function InventoryPage() {
     const [inventory,setinventory] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const deleteItem = (id) => {
+      const newInventory = inventory.filter(inventory => inventory.id !== id)
+
+      setinventory(newInventory)
+
+    }
+
     useEffect(() => {
         const fetchData = async () => {
           try {
@@ -65,6 +72,7 @@ function InventoryPage() {
           <InventoryItem 
           key={item.id}
           id = {item.id}
+          deleteItem = {deleteItem}
           name = {item.itemName}
           category = {item.category}
           status = {item.status}
