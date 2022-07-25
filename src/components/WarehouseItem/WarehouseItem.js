@@ -5,7 +5,7 @@ import edit__icon from "../../assets/Icons/edit-24px.svg";
 import { Link } from "react-router-dom";
 import Modal from "react-modal";
 import axios from "axios";
-import chevron from "../../assets/Icons/chevron_right-24px/svg";
+import chevron from "../../assets/Icons/chevron_right-24px.svg";
 import { API_URL_Warehouse } from "../../utilities/utility";
 
 function WarehouseItem(props) {
@@ -41,7 +41,15 @@ function WarehouseItem(props) {
                             <div className='grouping' id='1'>
                             <ul className='name-list'>
                             <li className='name-list__item'><p className="title">WAREHOUSE</p></li>
-                            <li className='name-list__item'><p className='name'>{props.name}</p> <img  className= "logo" alt = "chevron" src = {chevron} /></li>
+                            <li className='name-list__item'>
+                              <Link to={`/${props.id}`}>
+                                <p className='name'>{props.name}</p> 
+                                <img  
+                                className= "logo" 
+                                alt = "chevron" 
+                                src = {chevron} />
+                              </Link>
+                            </li>
                             </ul>
                             <ul className='address-list'>
                             <li className='address-list__item'><p className="title">ADDRESS</p></li>

@@ -26,3 +26,13 @@
         padding-right: $desktop-padding-gutter;
     }
 }
+
+.inventory-detail {
+    &__card {
+            margin-top: -3rem;
+
+            @include tablet {
+                margin-top: -5rem;
+            }
+    }
+}
