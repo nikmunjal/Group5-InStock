@@ -7,6 +7,7 @@ import Modal from "react-modal";
 import axios from "axios";
 import chevron from "../../assets/Icons/chevron_right-24px.svg";
 import { API_URL_Warehouse } from "../../utilities/utility";
+import sort from "../../assets/Icons/sort-24px.svg";
 
 function WarehouseItem(props) {
     const [open, setIsOpen] = useState(false);
@@ -37,16 +38,18 @@ function WarehouseItem(props) {
     return (
         <>
 
-                <div className='warehouse-item__card'>
+
+
+                <div className='warehouse-item__card' id="mobile">
                             <div className='grouping' id='1'>
                             <ul className='name-list'>
                             <li className='name-list__item'><p className="title">WAREHOUSE</p></li>
                             <li className='name-list__item'>
                               <Link to={`/${props.id}`}>
-                                <p className='name'>{props.name}</p> 
-                                <img  
-                                className= "logo" 
-                                alt = "chevron" 
+                                <p className='name'>{props.name}</p>
+                                <img
+                                className= "logo"
+                                alt = "chevron"
                                 src = {chevron} />
                               </Link>
                             </li>
@@ -71,7 +74,7 @@ function WarehouseItem(props) {
                             <li className='action-list__item'>
                                 <Link to="">
                                     <img
-                                        className="warehouse__logo"
+                                        className="warehouse__logo"id="delete__icon"
                                         onClick={openModal}
                                         alt="delete icon"
                                         src={delete__icon}
@@ -95,13 +98,82 @@ function WarehouseItem(props) {
                                         </Link>
                                         <Link to={`/edit/${props.id}`}>
                                             <img
-                                                className="warehouse__logo"
+                                                className="warehouse__logo"id="edit__icon"
                                                 alt="edit icon"
                                                 src={edit__icon}
                                             />
                                         </Link>
                                     </li>
                                             </ul></div>
+
+                                        </div>
+
+
+                            <div className='warehouse-item__card' id="tablet">
+
+                            <ul className='name-list'>
+                            <li className='name-list__item'><p className="title">WAREHOUSE</p></li>
+                            <li className='name-list__item'>
+                              <Link to={`/${props.id}`}>
+                                <p className='name'>{props.name}</p>
+                                <img
+                                className= "logo"
+                                alt = "chevron"
+                                src = {chevron} />
+                              </Link>
+                            </li>
+                            </ul>
+                            <ul className='address-list'>
+                            <li className='address-list__item'><p className="title">ADDRESS</p></li>
+                            <li className='address-list__item'><p className='address'>{props.address}</p></li>
+                            </ul>
+
+
+                        <ul className='contactName-list'>
+                            <li className='contactName-list__item'><p className="title">CONTACT NAME</p></li>
+                            <li className='contactName-list__item'><p className='contactName'>{props.contactName}</p></li>
+                        </ul>
+                        <ul className='contactInfo-list'>
+                            <li className='contactInfo-list__item'><p className="title">CONTACT INFORMATION</p></li>
+                            <li className='contactInfo-list__item'><p className='contactInfo'>{props.contactPhone} {props.contactEmail}</p></li>
+                        </ul>
+
+                        <ul className='action-list'>
+                            <li className='action-list__item'><p className="title">ACTIONS</p></li>
+                            <li className='action-list__item'>
+                                <Link to="">
+                                    <img
+                                        className="warehouse__logo"id="delete__icon"
+                                        onClick={openModal}
+                                        alt="delete icon"
+                                        src={delete__icon}
+                                    />
+                                            <Modal
+                                                isOpen={open}
+                                                onAfterOpen={afterOpenModal}
+                                                onRequestClose={closeModal}
+                                            >
+                                                <h1>Delete {props.name} warehouse?</h1>
+                                                <div>
+                                                    <p>
+                                                        Please confirm that you'd like to delete the
+                                                        {props.name} from the list of warehouses.
+                                                        You won't be able to undo this action
+                                                    </p>
+                                                </div>
+                                                <button onClick={closeModal}>Cancel</button>
+                                                <button onClick={removeWarehouse}> Delete</button>
+                                            </Modal>
+                                        </Link>
+                                        <Link to={`/edit/${props.id}`}>
+                                            <img
+                                                className="warehouse__logo"id="edit__icon"
+                                                alt="edit icon"
+                                                src={edit__icon}
+                                            />
+                                        </Link>
+                                    </li>
+                                            </ul>
 
                                         </div>
 

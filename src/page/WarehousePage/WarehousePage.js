@@ -45,6 +45,7 @@ function WarehousePage() {
                 </Link>
 
             </div>
+
             <ul className='table-titles'>
                 <li className='table-titles__item'><p className='title-tablet'>WAREHOUSE</p><img  className= "logo" alt = "updown arrows" src = {sort} /></li>
                 <li className='table-titles__item'><p className='title-tablet'>ADDRESS</p><img  className= "logo" alt = "updown arrows" src = {sort} /></li>
