@@ -14,8 +14,9 @@ return (
 
             <div className='detail-header'>
             <div className='title__container'> <img  className= "logo" alt =  "back icon" src = {back__icon} /> <h1 className='detail-header__title'>{props.details.itemName}</h1> </div>
-              <Link to={`/inventory/edit/${props.details.id}`}>
-                <button className='detail-header__button' type = "button">EDIT ITEM</button>
+              <Link className='detail-header__edit' to={`/inventory/edit/${props.details.id}`}>
+                        <img className="detail-header__edit--icon" src={edit__icon} alt="edit icon" />
+                        <p className="detail-header__edit--text">Edit</p>
               </Link>
             </div>
             <div className='details__card'>
