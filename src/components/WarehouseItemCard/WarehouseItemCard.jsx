@@ -1,8 +1,26 @@
 import "./WarehouseItemCard.scss";
 import chevron from "../../assets/Icons/chevron_right-24px.svg";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import Modal from "react-modal";
+import axios from "axios";
 
 function WarehouseItemCard({ item }) {
+    const [open, setOpen] = useState(false);
+
+    function openDeleteModal() {
+            setOpen(true);
+        };
+    
+        function closeDeleteModal() {
+            setOpen(false);
+        };
+    
+        function deleteItem() {
+            axios.delete(`http://localhost:8080/inventory/${item.id}`);
+            setOpen(false);
+    };
+
   // conditional className based on status
     let statusClass = "item-card__value";
     if (item.status === "In Stock") {
@@ -39,7 +57,26 @@ function WarehouseItemCard({ item }) {
         </div>
         </section>
         <section className="item-card__chg-cont">
-            <div className="item-card__delete"></div>
+            <div onClick={openDeleteModal} className="item-card__delete"></div>
+            <Modal isOpen={open} close={closeDeleteModal} className="modal">
+                    
+                    <h1 className="inventory__delete-header">
+                    Delete {item.name} inventory item?
+                    </h1>
+                    <p className="inventory__delete-desc">
+                    Please confirm that you'd like to delete {item.itemName} from the inventory list. You won't be able to undo this action.
+                    </p>
+                    <section className="inventory__delete-options">
+                    <button className="inventory__cancel-button inventory__modal-button" onClick={closeDeleteModal}>
+                        Cancel
+                    </button>
+                    
+                    <button className="inventory__delete-button inventory__modal-button" onClick={deleteItem}>
+                        Delete
+                    </button>
+                    </section>
+
+                </Modal>
             <Link to={`/inventory/edit/${item.id}`}>
                 <div className="item-card__edit"></div>
             </Link>
