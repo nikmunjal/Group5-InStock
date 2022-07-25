@@ -105,14 +105,12 @@
     order: 2;
 }
 p.In{
-    @include h4-header($in-stock, center);
-    @include stocktab ($in-stock-tab);
+    @include instock;
 
 }
 
 p.Out{
-    @include h4-header($out-of-stock, center);
-    @include stocktab ($out-of-stock-tab);
+    @include outstock;
 }
 
 .placeholder-container{
