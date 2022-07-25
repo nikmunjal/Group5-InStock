@@ -16,13 +16,14 @@ function App() {
             <Switch>
                 <Route path="/" exact component={WarehourePage} />
                 <Route path="/inventory" exact component={InventoryPage} />
-                <Route path="/inventory/:id" component={InventoryDetailsPage} />
+                <Route path="/inventory/:id" exact component={InventoryDetailsPage} />
+                <Route path="/inventory/edit/:id" exact component={InventoryEdit} />
                 <Route path="/add" component={AddNewWareHouse} />
                 {/* <Route path="/edit/:id" component={EditWarehouse} /> */}
                 <Route path="/:id" component={WarehouseDetail} />
                 {/* <Route path="/delete" component={DeleteWarehouse} /> */}
                 {/* <Route path="/inventory/add" component={AddInventory} /> */}
-                <Route path="/inventory/edit/:id" exact component={InventoryEdit} />
+                
             </Switch>
         </BrowserRouter>
     );

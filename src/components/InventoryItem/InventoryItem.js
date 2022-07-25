@@ -77,7 +77,7 @@ function InventoryItem(props){
                     </section>
 
                 </Modal>
-                <Link to={`/inventory/edit/${props.id}`}>
+                <Link to={`/inventory/${props.id}`}>
                   <img  className= "logo" alt =  "edit icon" src = {edit__icon} />
                 </Link>
               </li>
