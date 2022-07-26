@@ -28,29 +28,7 @@ function App() {
                     exact
                     component={InventoryEdit}
                 />
-<<<<<<< HEAD
-                <Route path="/add" component={AddNewWareHouse} />
                 <Route path="/:id" component={WarehouseDetail} />
-                <Route path="/:id" component={WarehouseDetail} />
-                <Route path="/edit/:id" component={EditWarehouse} />
-                <Route path="/inventory" exact component={InventoryPage} />
-                <Route
-                    path="/inventory/:id"
-                    exact
-                    component={InventoryDetailsPage}
-                />
-                <Route
-                    path="/inventory/edit/:id"
-                    exact
-                    component={InventoryEdit}
-                />
-                <Route path="/edit/:id" exact component={EditWarehouse} />
-                <Route path="/add" component={AddNewWareHouse} />
-=======
->>>>>>> 04175afc5fb0ee9329b1af72b5b7514efc7230aa
-                <Route path="/:id" component={WarehouseDetail} />
-                
-
             </Switch>
         </BrowserRouter>
     );
