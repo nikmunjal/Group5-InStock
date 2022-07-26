@@ -1,0 +1,172 @@
+@use "../../styles/partials/mixins" as *;
+@use "../../styles/partials/variables";
+
+.addnewwarehouse {
+    border: 1px solid variables.$cloud;
+    background-color: variables.$white;
+    &__flex-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        @include mobile {
+            width: 95%;
+            padding-bottom: variables.$mobile-padding-after-header;
+            padding-top: variables.$mobile-padding-before-header;
+        }
+
+        @include tablet {
+            width: 50%;
+            padding: variables.$tablet-padding-gutter;
+        }
+
+        @include desktop {
+            width: 35%;
+            padding-left: variables.$desktop-padding-gutter;
+        }
+    }
+
+    &__backarrow {
+        padding-top: 0.25rem;
+        @include tablet {
+            padding-top: 0.55rem;
+        }
+        @include mobile {
+            padding-left: variables.$mobile-padding-gutter;
+        }
+    }
+
+    &__header {
+        @include h1-header(variables.$instock-black, left);
+    }
+
+    &__form-flex {
+        @include tablet {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: variables.$mobile-padding-before-header;
+        }
+    }
+
+    &__form-div {
+        border-top: 1px solid variables.$cloud;
+    }
+
+    &__form {
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+
+    &__form-title {
+        @include tablet {
+            padding-bottom: 1.5rem;
+            padding-top: 1.5rem;
+        }
+
+        @include mobile {
+            padding-bottom: variables.$mobile-padding-after-header;
+            padding-top: variables.$mobile-padding-before-header;
+        }
+    }
+
+    &__form-container {
+        display: flex;
+        flex-flow: column;
+
+        @include mobile {
+            padding: 0 variables.$mobile-padding-gutter;
+        }
+
+        @include tablet {
+            flex: 60%;
+            padding: 0 variables.$tablet-padding-gutter;
+        }
+
+        @include desktop {
+            padding: 0 variables.$desktop-padding-gutter;
+        }
+    }
+
+    &__form-container--border {
+        border-top: 1px solid variables.$cloud;
+        margin: 1rem 0;
+        width: 100%;
+
+        @include tablet {
+            border-top: none;
+            border-left: 1px solid variables.$cloud;
+            padding: 0 variables.$tablet-padding-gutter;
+            margin-top: 0;
+        }
+
+        @include desktop {
+            padding: 0 variables.$desktop-padding-gutter;
+        }
+    }
+
+    &__form-label {
+        @include h3-labels-links-buttons(variables.$instock-black, left);
+
+        @include mobile {
+            padding-bottom: variables.$mobile-padding-after-label;
+        }
+    }
+
+    &__form-input {
+        border-color: variables.$cloud;
+        margin-bottom: 1rem;
+        @include form-field;
+
+        &:active {
+            border: 1px solid variables.$instock-indigo;
+        }
+    }
+
+    &__button-container {
+        margin-top: 1rem;
+        display: flex;
+        flex-flow: row-reverse;
+        justify-content: space-between;
+
+        @include mobile {
+            padding: 0 variables.$mobile-padding-gutter;
+        }
+
+        @include tablet {
+            padding-right: variables.$tablet-padding-gutter;
+            justify-content: end;
+            width: 100%;
+        }
+        @include desktop {
+            padding-right: variables.$desktop-padding-gutter;
+        }
+    }
+
+    &__button-cancel {
+        @include button(variables.$white);
+        @include h3-labels-links-buttons(variables.$instock-black, center);
+        border: 1px solid variables.$instock-black;
+        margin-right: 0.8rem;
+    }
+
+    &__button-add {
+        @include button(variables.$instock-indigo);
+        @include h3-labels-links-buttons(variables.$white, center);
+    }
+
+    @include mobile {
+        width: 100%;
+        margin-bottom: 1rem;
+        margin: 0 1rem;
+    }
+
+    @include tablet {
+        margin: 0 2rem;
+        margin-bottom: 5rem;
+    }
+
+    @include desktop {
+        margin: 0 5rem;
+        margin-bottom: 4rem;
+    }
+}

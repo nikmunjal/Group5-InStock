@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.scss";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import InventoryPage from "./page/InventoryPage/InventoryPage";
+import WarehousePage from "./page/WarehousePage/WarehousePage";
+import InventoryDetailsPage from "./page/InventoryDetailsPage/InventoryDetailsPage";
+import AddInventory from "./page/AddInventory/AddInventory";
+import WarehouseDetail from "./components/WarehouseDetail/WarehouseDetail";
+import AddNewWareHouse from "./page/AddNewWareHouse/AddNewWareHouse";
+import InventoryEdit from "./components/InventoryEdit/InventoryEdit";
+import EditWarehouse from "./page/EditWarehouse/EditWarehouse";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <Switch>
+                <Route path="/" exact component={WarehousePage} />
+                <Route path="/add" exact component={AddNewWareHouse} />
+                <Route path="/inventory/add" exact component={AddInventory} />
+                <Route
+                    path="/inventory/:id"
+                    exact
+                    component={InventoryDetailsPage}
+                />
+                <Route path="/inventory" exact component={InventoryPage} />
+                <Route path="/edit/:id" exact component={EditWarehouse} />
+                <Route
+                    path="/inventory/edit/:id"
+                    exact
+                    component={InventoryEdit}
+                />
+                <Route path="/:id" component={WarehouseDetail} />
+            </Switch>
+        </BrowserRouter>
+    );
 }
 
 export default App;

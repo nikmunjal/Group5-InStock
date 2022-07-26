@@ -1,0 +1,125 @@
+@import '../styles/partials/variables';
+@import '../styles/partials/mixins';
+@import '../styles/partials/fonts';
+
+.header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: $background-dark;
+    padding: 1rem 1rem;
+    height: 20vh;
+
+    @include tablet {
+        flex-direction: row;
+        padding: 1rem 2rem;
+    }
+
+    @include desktop {
+        padding: 1rem 5rem;
+        flex-direction: row;
+    }
+};
+
+.header__logo {
+    max-width: 50%;
+    align-self: center;
+    margin-bottom: 1rem;
+
+    @include tablet {
+        margin-bottom: 5rem;
+        margin-left: 1rem;
+    }
+};
+
+
+//      HEADER LINKS SECTION
+.header__links {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 0.75rem;
+
+    @include tablet {
+        margin-left: auto;
+    };
+
+    @include desktop {
+        margin-left: auto;
+    }
+};
+
+// WAREHOUSE SIDE
+.header__links-left {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+    @include tablet {
+        width: 100%
+    }
+};
+
+// INVENTORY SIDE
+.header__links-right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+
+    @include tablet {
+        width: 100%;
+    }
+};
+
+.warehouses__link {
+    border: none;
+    background-color: $background-dark;
+    color: $cloud;
+    height: 2.25rem;
+    @include h3-labels-links-buttons($font-semi, center);
+
+    @include tablet {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+};
+
+.warehouses__link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+};
+
+.warehouses__link-active {
+    background-color: $instock-black;
+    border-color: $instock-black;
+    height: 2.25rem;
+    border-radius: 20px;
+    width: 100%;
+    color: $white;
+};
+
+.inventory__link {
+    border: none;
+    background-color: $background-dark;
+    color: $cloud;
+    height: 2.25rem;
+    @include h3-labels-links-buttons($font-semi, center);
+
+    @include tablet {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+};
+
+.inventory__link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.inventory__link-active {
+    background-color: $instock-black;
+    border-color: $instock-black;
+    height: 2.25rem;
+    border-radius: 20px;
+    width: 100%;
+    color: $white;
+}

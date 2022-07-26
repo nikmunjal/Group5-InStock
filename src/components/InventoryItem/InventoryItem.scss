@@ -1,0 +1,286 @@
+@use '../../styles/partials/mixins' as *;
+
+
+
+.inventory-item__card{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   border-top: 1px solid $cloud;
+   padding-left: $mobile-padding-after-header;
+   padding-top: $mobile-padding-before-header;
+   padding-bottom: $mobile-padding-after-header;
+
+   @include tablet{
+    justify-content: space-between;
+    padding: $mobile-padding-gutter $tablet-padding-gutter;
+    border-top: 0;
+    border-bottom: 1px solid $cloud;
+
+   }
+
+   @include desktop{
+    &:hover{
+     background-color: rgba(46, 102, 230, 0.07);
+    }
+ }
+
+
+    & ul{
+        list-style:none;
+        flex: 40%;
+        padding-bottom: $mobile-padding-before-header;
+
+        @include tablet{
+
+            flex: 0 1 auto;
+
+        }
+    }
+
+    & .title{
+        @include h4-header($slate, left);
+        padding-bottom:$mobile-padding-after-label;
+        @include tablet{
+            display:none;
+        }
+
+
+
+    }
+}
+
+.name-list{
+    @include tablet{
+        width: 15%;
+    }
+
+    @include desktop{
+        width: 9%;
+    }
+
+    &__item{
+        display: flex;
+    }
+    & .name{
+        @include h3-labels-links-buttons($instock-indigo, left);
+
+    }
+
+    & .logo{
+        padding-left:0.25rem;
+    }
+}
+.category-list{
+    @include tablet{
+        width: 10%;
+    }
+
+    @include desktop{
+        width: 6%;
+    }
+
+    order: 3;
+
+    @include tablet{
+        order:2;
+    }
+}
+.category{
+   @include p2-body($instock-black, left)
+}
+
+.qty-list{
+    @include tablet{
+        width: 5%;
+    }
+
+    @include desktop{
+        width: 3%;
+    }
+
+    order: 4;
+
+}
+.qty{
+    @include p2-body($instock-black, left)
+}
+
+.warehouse-list{
+
+    @include tablet{
+        width: 12%;
+    }
+
+    @include desktop{
+        width: 7%;
+    }
+    order: 6;
+}
+.warehouse{
+    @include p2-body($instock-black, left)
+}
+
+.action-list{
+    @include tablet{
+        width: 9%;
+    }
+
+    @include desktop{
+        width: 5%;
+    }
+
+    order:7;
+    & .title{
+        display:none;
+    }
+
+    &__item{
+        display: flex;
+        justify-content: space-between;
+
+        @include tablet{
+            justify-content: flex-end;
+
+        }
+    }
+
+    & img{
+        &#delete__icon{
+            margin-right: 1rem;
+        }
+    }
+
+}
+
+.status-list{
+    @include tablet{
+        width: 8%;
+    }
+
+    order: 2;
+}
+p.In{
+    @include instock;
+
+}
+
+p.Out{
+    @include outstock;
+}
+
+.placeholder-container{
+    visibility:hidden;
+    order:5;
+
+    @include tablet{
+        display:none;
+    }
+}
+
+//      MODAL STYLING
+.modal {
+
+  @include tablet {
+    display: flex;
+    justify-content: center
+  }
+};
+
+.modal__body {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1rem;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: $white;
+    border-color: $white;
+
+    @include tablet {
+        padding: 1rem 1rem;
+        width: 80%;
+        height: 30%;
+        top: 170px;
+    }
+}
+
+.inventory__modal-close {
+    align-self: flex-end;
+    position: fixed;
+    padding-right: 0.5rem;
+}
+
+.modal__body-text {
+    padding-top: 4rem;
+
+    @include tablet {
+        padding: 2rem 4rem 0 ;
+    }
+}
+
+
+.inventory__delete-desc {
+    padding: 1rem 0;
+};
+
+.inventory__delete-options {
+    display: flex;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+
+    @include tablet {
+        position: relative;
+        padding-bottom: 1rem;
+        justify-content: flex-end;
+    }
+};
+
+.inventory__modal-button {
+    @include h3-labels-links-buttons($slate, center);
+    background-color: $white;
+    border-color: $cloud;
+    height: 2.25rem;
+    border-radius: 20px;
+    width: 90%;
+
+    @include tablet {
+        padding: 0 16px;
+        width: fit-content;
+    }
+};
+
+.inventory__delete-button {
+    background-color: $out-of-stock;
+    color: $white;
+    border-color: $out-of-stock;
+};
+
+
+.inventory__left-option {
+    @include mobile {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+    }
+
+    
+}
+
+.inventory__right-option {
+    @include mobile {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+    }
+
+   
+}
+
+p.name{
+    @include tablet{
+    &:hover{
+        text-decoration: underline;
+    }
+}
+}

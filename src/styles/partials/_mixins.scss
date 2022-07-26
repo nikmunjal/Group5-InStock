@@ -1,0 +1,242 @@
+// @use "./variables" as *;
+@import "./variables";
+
+// breakpoints for certain widths of the page
+@mixin mobile {
+    @media (max-width: $breakpoint-max-mobile) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: $breakpoint-min-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: $breakpoint-desktop) {
+        @content;
+    }
+}
+
+//font size and color mixins
+
+@mixin h1-header($font-color, $text-align) {
+    color: $font-color;
+    text-align: $text-align;
+    font-family: $font-semi;
+    @include desktop {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+    @include tablet {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+    @include mobile {
+        font-size: 1.75rem;
+        line-height: 2rem;
+    }
+}
+
+@mixin h2-subheader($font-color, $text-align) {
+    color: $font-color;
+    text-align: $text-align;
+    font-family: $font-semi;
+    @include desktop {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    @include tablet {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+    @include mobile {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+}
+
+@mixin h3-labels-links-buttons($font-color, $text-align) {
+    color: $font-color;
+    text-align: $text-align;
+    font-family: $font-semi;
+    @include desktop {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+    }
+    @include tablet {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+    }
+    @include mobile {
+        font-size: 0.8125rem;
+        line-height: 1.25rem;
+    }
+}
+
+@mixin h4-header($font-color, $text-align) {
+    color: $font-color;
+    text-align: $text-align;
+    font-family: $font-semi;
+    @include desktop {
+        font-size: 0.75rem;
+        line-height: 1.125rem;
+    }
+    @include tablet {
+        font-size: 0.75rem;
+        line-height: 1.125rem;
+    }
+    @include mobile {
+        font-size: 0.6875rem;
+        line-height: 1rem;
+    }
+}
+
+@mixin p1-body($font-color, $text-align) {
+    color: $font-color;
+    text-align: $text-align;
+    font-family: $font-regular;
+    @include desktop {
+        font-size: 1rem;
+        line-height: 1.75rem;
+    }
+    @include tablet {
+        font-size: 1rem;
+        line-height: 1.75rem;
+    }
+    @include mobile {
+        font-size: 0.9375rem;
+        line-height: 1.625rem;
+    }
+}
+
+@mixin p2-body($font-color, $text-align) {
+    color: $font-color;
+    text-align: $text-align;
+    font-family: $font-regular;
+    @include desktop {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+    }
+    @include tablet {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+    }
+    @include mobile {
+        font-size: 0.8125rem;
+        line-height: 1.25rem;
+    }
+}
+
+@mixin p3-body($font-color, $text-align) {
+    color: $font-color;
+    text-align: $text-align;
+    font-family: $font-regular;
+    @include desktop {
+        font-size: 0.75rem;
+        line-height: 1.125rem;
+    }
+    @include tablet {
+        font-size: 0.75rem;
+        line-height: 1.125rem;
+    }
+    @include mobile {
+        font-size: 0.6875rem;
+        line-height: 1rem;
+    }
+}
+
+// form fields
+@mixin form-field {
+    padding: 1rem;
+    margin-top: 0.25rem;
+    border-radius: 1.25rem;
+    @include p2-body($instock-black, left);
+
+    @include desktop {
+        height: 38px;
+        width: auto;
+    }
+    @include tablet {
+        height: 38px;
+        width: auto;
+    }
+    @include mobile {
+        height: 36px;
+        width: 100%;
+    }
+}
+
+// form active state
+@mixin form-field-active {
+    outline: 1px solid #2e66e6;
+}
+
+// button
+@mixin button($bg-colour) {
+    background-color: $bg-colour;
+    padding: 0 1rem;
+    border-radius: 1.25rem;
+    border: 0;
+
+    @include h3-labels-links-buttons($white, center);
+
+    @include desktop {
+        height: 38px;
+        width: auto;
+    }
+    @include tablet {
+        height: 38px;
+        line-height: auto;
+    }
+    @include mobile {
+        height: 36px;
+        width: 100%;
+    }
+}
+//instock tab
+@mixin stocktab($bg-colour) {
+    background-color: $bg-colour;
+    width: fit-content;
+    padding: 0 0.5rem;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    @include desktop {
+        height: 26px;
+    }
+    @include tablet {
+        height: 26px;
+    }
+    @include mobile {
+        height: 24px;
+    }
+}
+
+@mixin instock {
+    @include p3-body($in-stock, center);
+    text-transform: uppercase;
+    background: rgba(21, 132, 99, 0.07);
+    border-radius: 1.25rem;
+    width: 3.5rem;
+
+    @include tablet {
+        font-size: 0.6875rem;
+        line-height: 1rem;
+    }
+}
+
+@mixin outstock {
+    @include p3-body($out-of-stock, center);
+    text-transform: uppercase;
+    background: rgba(201, 69, 21, 0.07);
+    border-radius: 1.25rem;
+    width: 4.5rem;
+
+    @include tablet {
+        font-size: 0.6875rem;
+        line-height: 1rem;
+    }
+}
