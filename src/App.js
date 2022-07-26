@@ -29,8 +29,6 @@ function App() {
                     component={InventoryEdit}
                 />
                 <Route path="/:id" component={WarehouseDetail} />
-                
-
             </Switch>
         </BrowserRouter>
     );

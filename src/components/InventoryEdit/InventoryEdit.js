@@ -18,12 +18,12 @@ function InventoryEdit(props) {
     const [inStock, setInStock] = useState(false);
     const [validation, setValidation] = useState({
         warehouseName: true,
-        itemName: true, 
-        description: true, 
+        itemName: true,
+        description: true,
         category: true,
-        status: true,  
+        status: true,
     });
-    
+
 
     useEffect(() => {
         console.log(props.match.params.id)
@@ -69,7 +69,7 @@ function InventoryEdit(props) {
     const handleChangeCategory = (selectedCategory) => {
         setSelectedCategory(selectedCategory);
     };
-    
+
     const handleChangeWarehouse = (selectedWarehouse) => {
         setSelectedWarehouse(selectedWarehouse);
     };
@@ -79,14 +79,18 @@ function InventoryEdit(props) {
         console.log(e.target);
 
         const status = inStock ? "In Stock" : "Out of Stock";
+<<<<<<< HEAD
         const updatedQuantity = inStock ? inventory : 0;      
+=======
+        const updatedQuantity = inStock ? inventory.value : 0;
+>>>>>>> 9f01c3dfff2b22c4d799f46b7899866d4e6bacb6
         const updatedInventory = {
             warehouseName: e.target.warehouseName.value,
             itemName: e.target.itemName.value,
             description: e.target.description.value,
             category: e.target.category.value,
             status: status,
-            quantity: updatedQuantity, 
+            quantity: updatedQuantity,
         };
         console.log(inventory);
         console.log(updatedInventory)
@@ -111,7 +115,7 @@ function InventoryEdit(props) {
             !itemNameValidity ||
             !itemDescriptionValidity ||
             !categoryValidity ||
-            !statusValidity 
+            !statusValidity
         ) {
             return;
         }
@@ -144,10 +148,10 @@ function InventoryEdit(props) {
                 <section className="add-inv__section">
                     <h2 className="add-inv__subheader">Item Details</h2>
                     <label htmlFor="itemName" className="add-inv__label">Item Name</label>
-                    <input 
-                        type="text" 
+                    <input
+                        type="text"
                         id="itemName"
-                        className={`add-inv__name-value ${ 
+                        className={`add-inv__name-value ${
                             !validation.itemName && "add-inv__name-value--error"
                         }`}
                         defaultValue={inventory.itemName}
@@ -155,18 +159,18 @@ function InventoryEdit(props) {
                         />
                     {!validation.itemName && (
                         <div className="add-inv__input-error">
-                            <img 
-                            src={error} 
+                            <img
+                            src={error}
                             alt="error"
-                            className="add-inv__error-icon" 
+                            className="add-inv__error-icon"
                             />
                             <span>This field is required</span>
                         </div>
                     )}
                     <label htmlFor="description" className="add-inv__label">Description</label>
-                    <textarea 
-                    name="itemDescription" 
-                    id="description" 
+                    <textarea
+                    name="itemDescription"
+                    id="description"
                     className={`add-inv__desc-value ${
                         !validation.itemName && "add-inv__desc-value--error"
                     }`}
@@ -175,9 +179,9 @@ function InventoryEdit(props) {
                     </textarea>
                     {!validation.description && (
                         <div className="add-inv__input-error">
-                            <img 
-                                src={error} 
-                                alt="error" 
+                            <img
+                                src={error}
+                                alt="error"
                                 className="add-inv__error-icon"
                                 />
                             <span>This field is required</span>
@@ -196,9 +200,9 @@ function InventoryEdit(props) {
                     />
                     {!validation.category && (
                         <div classame="add-inv__input-error">
-                            <img 
+                            <img
                                 src={error}
-                                alt="error" 
+                                alt="error"
                                 className="add-inv__error-icon"
                             />
                             <span>This field is required</span>
@@ -210,7 +214,7 @@ function InventoryEdit(props) {
                     <h4 className="add-inv__label">Status</h4>
                     <div className="add-inv__radio-buttons">
                         <div className="add-inv__rb-container">
-                            <input 
+                            <input
                                 type="radio"
                                 name="status"
                                 className="add-inv__rb"
@@ -221,7 +225,7 @@ function InventoryEdit(props) {
                             <label htmlFor="instock" className="add-inv__radio-label">In stock</label>
                         </div>
                         <div className="add-inv__rb-container">
-                            <input 
+                            <input
                                 type="radio"
                                 name="status"
                                 className="add-inv__rb"
@@ -231,11 +235,11 @@ function InventoryEdit(props) {
                             <label htmlFor="outOfStock" className="add-inv__radio-label">Out of stock</label>
                         </div>
                     </div>
-                    
+
                     <label htmlFor="warehouse" className="add-inv__label">Warehouse</label>
                     <Select
-                        id="warehouse"
-                        name="warehouse"
+                        id="warehouseName"
+                        name="warehouseName"
                         placeholder={inventory.warehouseName}
                         className="add-inv__select"
                         options={warehouses}
@@ -243,10 +247,10 @@ function InventoryEdit(props) {
                     />
                     {!validation.warehouseName && (
                         <div className="add-inv__input-error">
-                            <img 
-                                src={error} 
+                            <img
+                                src={error}
                                 alt="error"
-                                className="add-inv__error-icon" 
+                                className="add-inv__error-icon"
                             />
                             <span>This field is required</span>
                         </div>
@@ -278,7 +282,7 @@ function InventoryEdit(props) {
     // });
 
     // console.log(itemData);
-    
+
     // const [saved, setSave] = useState(false);
 
     // const itemNameChange = (e) => {
@@ -386,7 +390,7 @@ function InventoryEdit(props) {
     //             status,
     //             warehouseName
     //         );
-            
+
     //     }
     //     e.target.reset();
     //     setSave(true);
@@ -416,7 +420,7 @@ function InventoryEdit(props) {
 
 //     return (
 //         <>
-//             <Header 
+//             <Header
 //                 warehouseLink={""}
 //                 inventoryLink={"inventory__link-active"}
 //             />
@@ -562,11 +566,11 @@ function InventoryEdit(props) {
 
 
 //                         <section className="inventory__edit-buttons">
-                            
+
 //                             <button className="cancel__button edit__form-button" onClick={clickFunc}>
 //                                 Cancel
 //                             </button>
-                            
+
 //                             <button className="save__button edit__form-button">
 //                                 Save
 //                             </button>
@@ -575,7 +579,7 @@ function InventoryEdit(props) {
 
 
 //                     </form>
-                
+
 //                 </div>
 //             </div>
 //             <Footer />

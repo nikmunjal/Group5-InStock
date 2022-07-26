@@ -13,6 +13,12 @@
         justify-content: space-around;
     }
 
+    @include desktop{
+        &:hover{
+         background-color: rgba(46, 102, 230, 0.07);
+        }
+     }
+
     &__left {
         display: flex;
         flex-direction: column;
@@ -112,6 +118,14 @@
         color: $instock-indigo;
         text-align: left;
         margin-bottom: 0.25rem;
+
+        &#hover{
+            @include tablet{
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
     }
 
     &--instock {

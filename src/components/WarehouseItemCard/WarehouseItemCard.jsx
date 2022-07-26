@@ -13,17 +13,17 @@ function WarehouseItemCard({ item, deleteInvItem}) {
         function openDeleteModal() {
             setOpen(true);
         };
-    
+
         function closeDeleteModal() {
             setOpen(false);
         };
-    
+
         function deleteItem() {
             axios.delete(`http://localhost:8080/inventory/${item.id}`);
             setOpen(false);
             deleteInvItem(item.id);
         };
-    
+
         useEffect(() => console.log('mounted'), []);
 
   // conditional className based on status
@@ -41,7 +41,7 @@ function WarehouseItemCard({ item, deleteInvItem}) {
             <h6 className="item-card__subhead">INVENTORY ITEM</h6>
             <div className="item-card__subsec">
             <Link to={`/inventory/${item.id}`}>
-                <p className="item-card__value--item">{item.itemName}</p>
+                <p className="item-card__value--item"id="hover">{item.itemName}</p>
             </Link>
             <img className="item-card__value--icon" src={chevron} alt="" />
             </div>
@@ -74,14 +74,14 @@ function WarehouseItemCard({ item, deleteInvItem}) {
                             Please confirm that you'd like to delete {item.itemName} from the inventory list. You won't be able to undo this action.
                         </p>
                         </section>
-                    
+
                         <section className="inventory__delete-options">
                             <section className="inventory__left-option">
                             <button className="inventory__cancel-button inventory__modal-button" onClick={closeDeleteModal}>
                                 Cancel
                             </button>
                             </section>
-                            
+
                             <section className="inventory__right-option">
                             <button className="inventory__delete-button inventory__modal-button" onClick={deleteItem}>
                                 Delete
