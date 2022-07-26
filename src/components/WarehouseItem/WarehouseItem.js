@@ -7,7 +7,7 @@ import Modal from "react-modal";
 import axios from "axios";
 import chevron from "../../assets/Icons/chevron_right-24px.svg";
 import { API_URL_Warehouse } from "../../utilities/utility";
-import sort from "../../assets/Icons/sort-24px.svg";
+// import sort from "../../assets/Icons/sort-24px.svg";
 
 function WarehouseItem(props) {
     const [open, setIsOpen] = useState(false);

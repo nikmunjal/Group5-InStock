@@ -74,17 +74,17 @@ function InventoryEdit(props) {
         setSelectedWarehouse(selectedWarehouse);
     };
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log(event.target);
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log(e.target);
 
         const status = inStock ? "In Stock" : "Out of Stock";
-        const updatedQuantity = inStock ? inventory.value : 0;        
+        const updatedQuantity = inStock ? inventory : 0;      
         const updatedInventory = {
-            warehouseName: event.target.warehouseName.value,
-            itemName: event.target.itemName.value,
-            description: event.target.itemDescription.value,
-            category: event.target.category.value,
+            warehouseName: e.target.warehouseName.value,
+            itemName: e.target.itemName.value,
+            description: e.target.description.value,
+            category: e.target.category.value,
             status: status,
             quantity: updatedQuantity, 
         };
@@ -117,7 +117,8 @@ function InventoryEdit(props) {
         }
 
         axios.put(`${API_URL_Inventory}/edit/${inventory.id}`, updatedInventory)
-        .then(() => {
+        .then((res) => {
+            console.log(res)
             props.history.push("/inventory");
         })
         .catch((err) => {
