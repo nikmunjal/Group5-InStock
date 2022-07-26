@@ -230,10 +230,9 @@ p.Out{
     padding-bottom: 2rem;
 
     @include tablet {
-        margin-left: auto;
         position: relative;
-        padding-bottom: 0;
-        padding-right: 4rem;
+        padding-bottom: 1rem;
+        justify-content: flex-end;
     }
 };
 
@@ -259,25 +258,23 @@ p.Out{
 
 
 .inventory__left-option {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-
-    @include tablet {
-        width: 100%;
-        justify-content: end;
+    @include mobile {
+        width: 50%;
+        display: flex;
+        justify-content: center;
     }
+
+    
 }
 
 .inventory__right-option {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-
-    @include tablet {
-        width: 100%;
-        justify-content: end;
+    @include mobile {
+        width: 50%;
+        display: flex;
+        justify-content: center;
     }
+
+   
 }
 
 p.name{
