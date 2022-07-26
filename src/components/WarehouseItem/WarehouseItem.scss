@@ -48,7 +48,14 @@
         flex-wrap: nowrap;
         align-items: center;
 
+
+
        }
+       @include desktop{
+       &:hover{
+        background-color: rgba(46, 102, 230, 0.07);
+       }
+    }
 
     }
 
