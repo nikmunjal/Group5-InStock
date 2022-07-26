@@ -57,8 +57,8 @@ function InventoryItem(props){
             <ul className='action-list'>
               <li className='action-list__item'><p className="title">ACTIONS</p></li>
               <li className='action-list__item'>
-                <img onClick={openDeleteModal} className= "logo" alt = "delete icon" src = {delete__icon} /> 
-                
+                <img onClick={openDeleteModal} className= "logo" alt = "delete icon" src = {delete__icon} />
+
                 <Modal isOpen={open} close={closeDeleteModal} className="modal">
                     <section className="modal__body">
                         <img className="inventory__modal-close" onClick={closeDeleteModal} src={close} alt="close icon"/>
@@ -70,14 +70,14 @@ function InventoryItem(props){
                           Please confirm that you'd like to delete {props.itemName} from the inventory list. You won't be able to undo this action.
                         </p>
                       </section>
-                    
+
                       <section className="inventory__delete-options">
                           <section className="inventory__left-option">
                             <button className="inventory__cancel-button inventory__modal-button" onClick={closeDeleteModal}>
                                 Cancel
                             </button>
                           </section>
-                          
+
                           <section className="inventory__right-option">
                             <button className="inventory__delete-button inventory__modal-button" onClick={deleteItem}>
                                 Delete
@@ -87,7 +87,7 @@ function InventoryItem(props){
                     </section>
 
                 </Modal>
-                <Link to={`/inventory/${props.id}`}>
+                <Link to={`/inventory/edit/${props.id}`}>
                   <img  className= "logo" alt =  "edit icon" src = {edit__icon} />
                 </Link>
               </li>
