@@ -19,6 +19,12 @@
 
    }
 
+   @include desktop{
+    &:hover{
+     background-color: rgba(46, 102, 230, 0.07);
+    }
+ }
+
 
     & ul{
         list-style:none;
@@ -228,4 +234,12 @@ p.Out{
         width: 100%;
         justify-content: end;
     }
+}
+
+p.name{
+    @include tablet{
+    &:hover{
+        text-decoration: underline;
+    }
+}
 }

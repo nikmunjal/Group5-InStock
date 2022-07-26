@@ -4,5 +4,9 @@
 
 * {
     font-family: $font-regular;
+
+    a, a:visited, a:hover, a:active {
+        color: inherit;
+      }
 }
 
