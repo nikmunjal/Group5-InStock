@@ -51,6 +51,14 @@
 }
 
 .name-list{
+    @include tablet{
+        width: 15%;
+    }
+
+    @include desktop{
+        width: 9%;
+    }
+
     &__item{
         display: flex;
     }
@@ -64,6 +72,14 @@
     }
 }
 .category-list{
+    @include tablet{
+        width: 10%;
+    }
+
+    @include desktop{
+        width: 6%;
+    }
+
     order: 3;
 
     @include tablet{
@@ -75,6 +91,14 @@
 }
 
 .qty-list{
+    @include tablet{
+        width: 5%;
+    }
+
+    @include desktop{
+        width: 3%;
+    }
+
     order: 4;
 
 }
@@ -83,6 +107,14 @@
 }
 
 .warehouse-list{
+
+    @include tablet{
+        width: 12%;
+    }
+
+    @include desktop{
+        width: 7%;
+    }
     order: 6;
 }
 .warehouse{
@@ -90,6 +122,14 @@
 }
 
 .action-list{
+    @include tablet{
+        width: 9%;
+    }
+
+    @include desktop{
+        width: 5%;
+    }
+
     order:7;
     & .title{
         display:none;
@@ -114,6 +154,10 @@
 }
 
 .status-list{
+    @include tablet{
+        width: 8%;
+    }
+
     order: 2;
 }
 p.In{

@@ -57,7 +57,7 @@ function InventoryItem(props){
             <ul className='action-list'>
               <li className='action-list__item'><p className="title">ACTIONS</p></li>
               <li className='action-list__item'>
-                <img onClick={openDeleteModal} className= "logo" alt = "delete icon" src = {delete__icon} />
+                <img onClick={openDeleteModal} className= "logo" alt = "delete icon" src = {delete__icon} id='delete__icon' />
 
                 <Modal isOpen={open} close={closeDeleteModal} className="modal">
                     <section className="modal__body">
