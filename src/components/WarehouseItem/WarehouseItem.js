@@ -35,31 +35,7 @@ function WarehouseItem(props) {
     return (
         <>
             <div className="warehouse-item__card">
-                <div className="grouping" id="1">
-                    <ul className="name-list">
-                        <li className="name-list__item">
-                            <p className="title">WAREHOUSE</p>
-                        </li>
-                        <li className="name-list__item">
-                            <Link to={`/${props.id}`}>
-                                <p className="name">{props.name}</p>
-                                <img
-                                    className="logo"
-                                    alt="chevron"
-                                    src={chevron}
-                                />
-                            </Link>
-                        </li>
-                    </ul>
-                    <ul className="address-list">
-                        <li className="address-list__item">
-                            <p className="title">ADDRESS</p>
-                        </li>
-                        <li className="address-list__item">
-                            <p className="address">{props.address}</p>
-                        </li>
-                    </ul>
-                </div>
+
 
                 <div className="warehouse-item__card" id="mobile">
                     <div className="grouping" id="1">
@@ -187,7 +163,7 @@ function WarehouseItem(props) {
                 </div>
 
                 <div className="warehouse-item__card" id="tablet">
-                    <ul className="name-list">
+                    <ul className="name-list" id="warehouse">
                         <li className="name-list__item">
                             <p className="title">WAREHOUSE</p>
                         </li>
@@ -230,7 +206,7 @@ function WarehouseItem(props) {
                         </li>
                     </ul>
 
-                    <ul className="action-list">
+                    <ul className="action-list"id="warehouse">
                         <li className="action-list__item">
                             <p className="title">ACTIONS</p>
                         </li>

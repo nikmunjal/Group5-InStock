@@ -63,6 +63,10 @@
         flex: 50%;
         padding-bottom: $mobile-padding-before-header;
 
+        @include tablet{
+            flex: 0 1 auto;
+        }
+
         &#tablet {
             display: none;
 
@@ -81,6 +85,10 @@
             list-style: none;
             flex: 50%;
             padding-bottom: $mobile-padding-before-header;
+
+            @include tablet{
+                flex:0 1 auto;
+            }
 
             & .title {
                 @include h4-header($slate, left);
@@ -204,4 +212,53 @@
 
 a {
     display: flex;
+}
+
+.address-list{
+    @include tablet{
+        width: 10%
+    }
+    @include desktop{
+        width:10%;
+    }
+}
+
+.contactName-list{
+    @include tablet{
+        width: 14%
+    }
+    @include desktop{
+        width:12%;
+    }
+}
+
+.contactInfo-list{
+    @include tablet{
+        width: 21%
+    }
+    @include desktop{
+        width:13%;
+    }
+}
+
+.name-list{
+    &#warehouse{
+    @include tablet{
+        width: 13%
+    }
+    @include desktop{
+        width:8%;
+    }
+}
+}
+
+.action-list{
+    &#warehouse{
+    @include tablet{
+        width: 12%
+    }
+    @include desktop{
+        width:7%;
+    }
+}
 }
