@@ -1,87 +1,207 @@
-@use '../../styles/partials/mixins' as *;
+@use "../../styles/partials/mixins" as *;
 
-.table-titles{
-    display:none;
-    list-style:none;
-    @include tablet{
-    display: flex;
-    @include h4-header($slate, left);
-    justify-content: space-between;
-    padding: 0 $tablet-padding-gutter;
-    background-color: rgba(247, 248, 249, 0.7);
+.table-titles {
+    display: none;
+    list-style: none;
+    @include tablet {
+        display: flex;
+        @include h4-header($slate, left);
+        justify-content: space-between;
+        padding: 0 $tablet-padding-gutter;
+        background-color: rgba(247, 248, 249, 0.7);
     }
 
-& .table-titles__item{
-    display: flex;
-    flex: 0 1 auto;
-    padding: $mobile-padding-gutter 0;
+    & .table-titles__item {
+        display: flex;
+        flex: 0 1 auto;
+        padding: $mobile-padding-gutter 0;
+    }
 }
-}
 
-.warehouse-item__card{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    border-top: 1px solid $cloud;
-    padding-left: $mobile-padding-after-header;
-    padding-top: $mobile-padding-before-header;
-    padding-bottom: $mobile-padding-after-header;
+.warehouse-item__card {
+    &#mobile {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        border-top: 1px solid $cloud;
+        padding-left: $mobile-padding-after-header;
+        padding-top: $mobile-padding-before-header;
+        padding-bottom: $mobile-padding-after-header;
 
-
-
-    @include tablet{
-     justify-content: space-between;
-     padding: $mobile-padding-gutter $tablet-padding-gutter;
-     border-top: 0;
-     border-bottom: 1px solid $cloud;
-     flex-wrap: nowrap;
-
+        @include tablet {
+            display: none;
+        }
     }
 
 
-     & ul{
-         list-style:none;
-         flex:50%;
-         padding-bottom: $mobile-padding-before-header;
 
-         @include tablet{
+    &#tablet{
+       display: none;
 
-
-
-         }
-     }
-
-     & .title{
-         @include h4-header($slate, left);
-         padding-bottom:$mobile-padding-after-label;
-         @include tablet{
-             display:none;
-         }
+       @include tablet{
+        display: flex;
+        justify-content: space-between;
+        padding: $mobile-padding-gutter $tablet-padding-gutter;
+        border-top: 0;
+        border-bottom: 1px solid $cloud;
+        flex-wrap: nowrap;
+        align-items: center;
 
 
 
-     }
- }
- .address .contactName .contactInfo {
-    @include p2-body($instock-black, left)
- }
+       }
+       @include desktop{
+       &:hover{
+        background-color: rgba(46, 102, 230, 0.07);
+       }
+    }
 
- .contactInfo{
+    }
+
+    & ul {
+        list-style: none;
+        flex: 50%;
+        padding-bottom: $mobile-padding-before-header;
+
+        &#tablet {
+            display: none;
+
+            @include tablet {
+                display: flex;
+                justify-content: space-between;
+                padding: $mobile-padding-gutter $tablet-padding-gutter;
+                border-top: 0;
+                border-bottom: 1px solid $cloud;
+                flex-wrap: nowrap;
+                align-items: center;
+            }
+        }
+
+        & ul {
+            list-style: none;
+            flex: 50%;
+            padding-bottom: $mobile-padding-before-header;
+
+            & .title {
+                @include h4-header($slate, left);
+                padding-bottom: $mobile-padding-after-label;
+                @include tablet {
+                    display: none;
+                }
+            }
+        }
+        .address .contactName .contactInfo {
+            @include p2-body($instock-black, left);
+        }
+        .contactInfo {
+            flex: 20%;
+            width: 100%;
+        }
+    }
+
+    & .title {
+        @include h4-header($slate, left);
+        padding-bottom: $mobile-padding-after-label;
+        @include tablet {
+            display: none;
+        }
+    }
+}
+.address .contactName .contactInfo {
+    @include p2-body($instock-black, left);
+}
+
+.contactInfo {
     display: flex;
     flex-direction: column;
- }
+}
 
- .grouping{
-    display:flex;
+.grouping {
+    display: flex;
     justify-content: space-between;
-    width:100%;
+    width: 100%;
 
-    @include tablet{
+    @include tablet {
         width: auto;
+    }
+}
 
-
+.modal {
+    @include tablet {
+        display: flex;
+        justify-content: center;
     }
 
+    &__body {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 1rem;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: $white;
+        border-color: $white;
 
+        @include tablet {
+            padding: 1rem 1rem;
+            width: 80%;
+            height: 30%;
+            top: 170px;
+        }
+    }
 
- }
+    &__modal-close {
+        align-self: flex-end;
+        position: fixed;
+        padding-right: 0.5rem;
+    }
+
+    &__body-text {
+        padding-top: 4rem;
+
+        @include tablet {
+            padding: 2rem 4rem 0;
+        }
+    }
+
+    &__delete-desc {
+        padding: 1rem 0;
+    }
+
+    &__delete-options {
+        display: flex;
+        padding-right: 2rem;
+        padding-bottom: 2rem;
+
+        @include tablet {
+            margin-left: auto;
+            position: relative;
+            padding-bottom: 0;
+            padding-right: 4rem;
+        }
+    }
+
+    &__modal-button {
+        @include h3-labels-links-buttons($slate, center);
+        background-color: $white;
+        border-color: $cloud;
+        height: 2.25rem;
+        border-radius: 20px;
+        width: 90%;
+
+        @include tablet {
+            padding: 0 16px;
+            width: fit-content;
+        }
+    }
+
+    &__delete-button {
+        background-color: $out-of-stock;
+        color: $white;
+        border-color: $out-of-stock;
+    }
+}
+
+a {
+    display: flex;
+}

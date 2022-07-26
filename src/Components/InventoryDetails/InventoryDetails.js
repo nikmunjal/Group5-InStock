@@ -13,13 +13,18 @@ return (
         <div className='inventory-detail__card'>
 
             <div className='detail-header'>
-            <div className='title__container'> <img  className= "logo" alt =  "back icon" src = {back__icon} /> <h1 className='detail-header__title'>{props.details.itemName}</h1> </div>
-              <Link to={`/inventory/edit/${props.details.id}`}>
-                <button className='detail-header__button' type = "button">EDIT ITEM</button>
-              </Link>
+            <div className='title__container'>
+            <Link to="/inventory">
+                <img  className= "logo" alt =  "back icon" src = {back__icon} />
+            </Link>
+            <h1 className='detail-header__title'>{props.details.itemName}</h1> </div>
+                <Link className='detail-header__edit' to={`/inventory/edit/${props.details.id}`}>
+                        <img className="detail-header__edit--icon" src={edit__icon} alt="edit icon" />
+                        <p className="detail-header__edit--text">Edit</p>
+                </Link>
             </div>
             <div className='details__card'>
-            <div>
+            <div className='container'id='one'>
             <ul className='detail-description-list'>
             <li className='detail-description-list__item'><p className="detail-title"> ITEM DESCRIPTION</p></li>
             <li className='detail-description-list__item'><p className='detail-description'>{props.details.description}</p></li>
@@ -35,7 +40,7 @@ return (
                 <li className='detail-placeholder-container__item'><p className='detail-blank'>"blank"</p></li>
                 </ul>
             </div></div>
-            <div>
+            <div className='container'id='two'>
             <div className='detail__subcard'>
                 <ul className='detail-status-list'>
                 <li className='detail-status-list__item'><p className="detail-title">STATUS</p></li>

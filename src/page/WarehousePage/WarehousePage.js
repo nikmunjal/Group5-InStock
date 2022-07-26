@@ -5,12 +5,19 @@ import { Link } from 'react-router-dom';
 import axios from 'axios';
 import WarehouseItem from '../../components/WarehouseItem/WarehouseItem';
 import Header from '../../components/Header';
-import Footer from '../../components/Footer'
-import sort from "../../assets/Icons/sort-24px.svg"
+import Footer from '../../components/Footer';
+import sort from "../../assets/Icons/sort-24px.svg";
 
 function WarehousePage() {
     const [warehouse, setwarehouse] = useState([]);
     const [loading, setLoading] = useState(true);
+
+    const deleteWarehouse = (id) => {
+        const newWarehouse = warehouse.filter(warehouse => warehouse.id !== id)
+
+        setwarehouse(newWarehouse)
+
+      }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -45,6 +52,7 @@ function WarehousePage() {
                 </Link>
 
             </div>
+
             <ul className='table-titles'>
                 <li className='table-titles__item'><p className='title-tablet'>WAREHOUSE</p><img  className= "logo" alt = "updown arrows" src = {sort} /></li>
                 <li className='table-titles__item'><p className='title-tablet'>ADDRESS</p><img  className= "logo" alt = "updown arrows" src = {sort} /></li>
@@ -57,6 +65,7 @@ function WarehousePage() {
             {warehouse.map((w) => (
                 <WarehouseItem
                     key={w.id}
+                    deleteWarehouse = {deleteWarehouse}
                     id={w.id}
                     name={w.name}
                     address={w.address}

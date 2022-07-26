@@ -13,6 +13,11 @@ import { API_URL_Warehouse } from "../../utilities/utility";
 function WarehouseDetails(props) {
     const [warehouse, setWarehouse] = useState(null);
     const [inventory, setInventory] = useState([]);
+
+    const deleteItem = (id) => {
+        const newInventory = inventory.filter(inventory => inventory.id !== id)
+        setInventory(newInventory)
+    }
     const warehouseID = props.match.params.id;
 
     useEffect((res) => {
@@ -20,7 +25,6 @@ function WarehouseDetails(props) {
         .then((res) => {
             if(res.status === 200){
                 setWarehouse(res.data);
-                console.log(res.data);
             }
         });
 
@@ -29,8 +33,8 @@ function WarehouseDetails(props) {
             if(res.status === 200){
                 setInventory(res.data);
             }
-        });
-    },[warehouseID]);
+        }); 
+    },[warehouseID]); 
 
     if (!warehouse) return null;
 
@@ -48,7 +52,7 @@ function WarehouseDetails(props) {
                 </div>
                 <h1 className="head__title">{warehouse.name}</h1>
                 <div>
-                    <Link className="head__edit" to={`/warehouse/edit/${warehouse.id}`}>
+                    <Link className="head__edit" to={`/edit/${warehouse.id}`}>
                         <img className="head__edit--icon" src={editIcon} alt="edit icon" />
                         <p className="head__edit--text">Edit</p>
                     </Link>
@@ -101,7 +105,7 @@ function WarehouseDetails(props) {
             </article>
             <article>
                 {inventory.map((item) => (
-                    <WarehouseItemCard key={item.id} item={item} />
+                    <WarehouseItemCard key={item.id} item={item} deleteInvItem={deleteItem} />
                 ))}
             </article>
         </section>
