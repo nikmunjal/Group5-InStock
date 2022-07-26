@@ -12,6 +12,13 @@ function WarehousePage() {
     const [warehouse, setwarehouse] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    const deleteWarehouse = (id) => {
+        const newWarehouse = warehouse.filter(warehouse => warehouse.id !== id)
+
+        setwarehouse(newWarehouse)
+
+      }
+
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -58,6 +65,7 @@ function WarehousePage() {
             {warehouse.map((w) => (
                 <WarehouseItem
                     key={w.id}
+                    deleteWarehouse = {deleteWarehouse}
                     id={w.id}
                     name={w.name}
                     address={w.address}
