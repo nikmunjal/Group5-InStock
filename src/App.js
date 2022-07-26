@@ -16,25 +16,19 @@ function App() {
                 <Route path="/" exact component={WarehousePage} />
                 <Route path="/add" exact component={AddNewWareHouse} />
                 <Route path="/inventory/add" exact component={AddInventory} />
-
-                <Route path="/" exact component={WarehousePage} />
-                <Route path="/add" exact component={AddNewWareHouse} />
                 <Route
                     path="/inventory/:id"
                     exact
                     component={InventoryDetailsPage}
                 />
                 <Route path="/inventory" exact component={InventoryPage} />
-                <Route
-                    path="/inventory/:id"
-                    exact
-                    component={InventoryDetailsPage}
-                />
+                <Route path="/edit/:id" exact component={EditWarehouse} />
                 <Route
                     path="/inventory/edit/:id"
                     exact
                     component={InventoryEdit}
                 />
+<<<<<<< HEAD
                 <Route path="/add" component={AddNewWareHouse} />
                 <Route path="/:id" component={WarehouseDetail} />
                 <Route path="/:id" component={WarehouseDetail} />
@@ -52,7 +46,11 @@ function App() {
                 />
                 <Route path="/edit/:id" exact component={EditWarehouse} />
                 <Route path="/add" component={AddNewWareHouse} />
+=======
+>>>>>>> 04175afc5fb0ee9329b1af72b5b7514efc7230aa
                 <Route path="/:id" component={WarehouseDetail} />
+                
+
             </Switch>
         </BrowserRouter>
     );

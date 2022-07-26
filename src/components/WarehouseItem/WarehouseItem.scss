@@ -18,21 +18,20 @@
     }
 }
 
-.warehouse-item__card {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    border-top: 1px solid $cloud;
-    padding-left: $mobile-padding-after-header;
-    padding-top: $mobile-padding-before-header;
-    padding-bottom: $mobile-padding-after-header;
+.warehouse-item__card{
+    &#mobile{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        border-top: 1px solid $cloud;
+        padding-left: $mobile-padding-after-header;
+        padding-top: $mobile-padding-before-header;
+        padding-bottom: $mobile-padding-after-header;
 
-    @include tablet {
-        justify-content: space-between;
-        padding: $mobile-padding-gutter $tablet-padding-gutter;
-        border-top: 0;
-        border-bottom: 1px solid $cloud;
-        flex-wrap: nowrap;
+        @include tablet{
+            display: none;
+        }
+
     }
 
     & ul {
@@ -40,9 +39,29 @@
         flex: 50%;
         padding-bottom: $mobile-padding-before-header;
 
-        @include tablet {
-        }
+
+    &#tablet{
+       display: none;
+
+       @include tablet{
+        display: flex;
+        justify-content: space-between;
+        padding: $mobile-padding-gutter $tablet-padding-gutter;
+        border-top: 0;
+        border-bottom: 1px solid $cloud;
+        flex-wrap: nowrap;
+        align-items: center;
+
+       }
+
     }
+
+
+
+     & ul{
+         list-style:none;
+         flex:50%;
+         padding-bottom: $mobile-padding-before-header;
 
     & .title {
         @include h4-header($slate, left);
@@ -56,7 +75,28 @@
     @include p2-body($instock-black, left);
 }
 
-.contactInfo {
+            flex: 20%;
+            width: 100%;
+
+         }
+     }
+
+     & .title{
+         @include h4-header($slate, left);
+         padding-bottom:$mobile-padding-after-label;
+         @include tablet{
+             display:none;
+         }
+
+
+
+     }
+ }
+ .address .contactName .contactInfo {
+    @include p2-body($instock-black, left)
+ }
+
+ .contactInfo{
     display: flex;
     flex-direction: column;
 }
@@ -145,4 +185,9 @@
         color: $white;
         border-color: $out-of-stock;
     }
-}
+
+ }
+
+ a{
+    display:flex;
+ }
