@@ -79,11 +79,7 @@ function InventoryEdit(props) {
         console.log(e.target);
 
         const status = inStock ? "In Stock" : "Out of Stock";
-<<<<<<< HEAD
-        const updatedQuantity = inStock ? inventory : 0;      
-=======
         const updatedQuantity = inStock ? inventory.value : 0;
->>>>>>> 9f01c3dfff2b22c4d799f46b7899866d4e6bacb6
         const updatedInventory = {
             warehouseName: e.target.warehouseName.value,
             itemName: e.target.itemName.value,
